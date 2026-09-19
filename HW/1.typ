@@ -117,37 +117,159 @@
     $
     从而
     $
-      E_p >= ((m_p + m_pi)^2 - m_p^2) / (4 E_gamma) = 7 times 10^10 "GeV"
+      E_p >= ((m_p + m_pi)^2 - m_p^2) / (4 E_gamma) = 6.79 times 10^10 "GeV"
     $
   - 衰减系数
     $
-      lambda = 1 / (sigma rho) = 5.6 times 10^(22) "m"
+      lambda = 1 / (sigma rho) = 1.67 times 10^(21) "m"
     $
     在宇宙学中
     $
       1 "Mcp" = 3.1 times 10^(21) "m"
     $
-    这个衰减长度大约是宇宙学尺度的 $18 "Mcp"$，因此是比较小的。
+    这个衰减长度大约是宇宙学尺度的 $5.4 "Mcp"$，因此是比较小的。
 ]
 
 #exercise(subname: [1.9])[
   The Bevatron was designed to have sufficient energy to produce antiprotons. What is the minimum energy of the proton beam for such a process? Take into account that, because of baryonic number conservation (see Section 2.7), the reaction is $p + p -> p + p + overline(p) + p$.
 ]
 
+#solution[
+  实验室系中，初态四动量为
+  $
+    p_(p 1) & = (E_p, vb(p)_p) \
+    p_(p 2) & = (m_p, vb(0)) \
+  $
+  其中
+  $
+    E_p = sqrt(abs(vb(p)_p)^2 + m_p^2)
+  $
+  从而
+  $
+    s = (p_(p 1) + p_(p 2)) dot (p_(p 1) + p_(p 2)) = (E_p + m_p)^2 - abs(vb(p)_p)^2 = 2m_p^2 + 2 m_p E_p
+  $
+  而末态四动量为
+  $
+    p'_(p 1), p'_(p 2), p'_(overline(p)), p'_(p 3)
+  $
+  有
+  $
+    s = (p'_(p 1) + p'_(p 2) + p'_(overline(p)) + p'_(p 3)) dot (p'_(p 1) + p'_(p 2) + p'_(overline(p)) + p'_(p 3)) >= (4 m_p)^2
+  $
+  从而
+  $
+    E_p >= ((4 m_p)^2 - 2 m_p^2) / (2 m_p) = 7 m_p approx 6.57 "GeV"
+  $
+]
+
 #exercise(subname: [1.11])[
   Consider a particle of mass $M$ decaying into two bodies of masses $m_1$ and $m_2$. Give the expressions of the energies and of the momenta of the decay products in the CM frame.
+]
+
+#solution[
+  在质心系中，四动量为
+  $
+    p_M & = (M, vb(0)) \
+    p_1 & = (E_1, vb(p)_1) \
+    p_2 & = (E_2, vb(p)_2)
+  $
+  有
+  $
+    p_M = p_1 + p_2
+  $
+  从而
+  $
+    E_1 + E_2 = M, vb(p)_1 + vb(p)_2 = vb(0)
+  $
+  且
+  $
+    E_1^2 - abs(vb(p)_1)^2 = m_1^2, E_2^2 - abs(vb(p)_1)^2 = m_2^2
+  $
+  联立以上方程，解得
+  $
+             E_1 & = (M^2 + m_1^2 - m_2^2) / (2 M) \
+             E_2 & = (M^2 + m_2^2 - m_1^2) / (2 M) \
+    abs(vb(p)_1) & = abs(vb(p)_2) = sqrt(E_1^2 - m_1^2) = sqrt(E_2^2 - m_2^2) \
+                 & = sqrt(((M^2 - (m_1 + m_2)^2)(M^2 - (m_1 - m_2)^2)) / (4 M^2))
+  $
 ]
 
 #exercise(subname: [1.12])[
   Evaluate the energies and momenta in the CM frame of the two final particles of the decays $Lambda -> p pi^-$, $Xi^- -> Lambda pi^-$.
 ]
 
+#solution[
+  对于 $Lambda -> p pi^-$，有
+  $
+    M = m_Lambda = 1.115 "GeV", m_1 = m_p = 0.938 "GeV", m_2 = m_pi = 0.135 "GeV"
+  $
+  从而
+  $
+             E_p & = (M^2 + m_1^2 - m_2^2) / (2 M) approx 0.944 "GeV" \
+            E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) approx 0.172 "GeV" \
+    abs(vb(p)_p) & = abs(vb(p)_pi) = sqrt(E_p^2 - m_1^2) approx 0.101 "GeV"
+  $
+  对于 $Xi^- -> Lambda pi^-$，有
+  $
+    M = m_Xi = 1.321 "GeV", m_1 = m_Lambda = 1.116 "GeV", m_2 = m_pi = 0.135 "GeV"
+  $
+  从而
+  $
+             E_Lambda & = (M^2 + m_1^2 - m_2^2) / (2 M) approx 1.124 "GeV" \
+                 E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) approx 0.197 "GeV" \
+    abs(vb(p)_Lambda) & = abs(vb(p)_pi) = sqrt(E_Lambda^2 - m_1^2) approx 0.140 "GeV"
+  $
+]
+
+
 #exercise(subname: [1.13])[
   Find the expressions of the energies and momenta of the final particles of the decay $M -> m_1 + m_2$ in the CM; the mass of $m_2$ is zero.
 ]
 
+#solution[
+  在上面的解中，令 $m_2 = 0$，则有
+  $
+             E_1 & = (M^2 + m_1^2) / (2 M) \
+             E_2 & = (M^2 - m_1^2) / (2 M) \
+    abs(vb(p)_1) & = abs(vb(p)_2) = sqrt(E_1^2 - m_1^2) = sqrt(E_2^2) \
+                 & = sqrt((M^2 - m_1^2) / (4 M^2))
+  $
+]
+
 #exercise(subname: [1.14])[
   In a monochromatic $pi$ beam with momentum $p_pi$, a fraction of the pions decays in flight as $pi -> mu + nu_mu$. We observe that, in some cases, the muons move backwards. Find the maximum value of $p_pi$ for this to happen.
+]
+
+#solution[
+  在质心系中，考虑$m_nu approx 0$有
+  $
+               E_mu^* & = (m_pi^2 + m_mu^2) / (2 m_pi) approx 0.110 "GeV" \
+    abs(vb(p)_(mu)^*) & = (m_pi^2 - m_mu^2) / (2 m_pi) approx 0.030 "GeV" \
+  $
+  对于实验室系，$beta$为质心系相对于实验室系的速度，$gamma = 1 / sqrt(1 - beta^2)$，则有
+  $
+    mat(E_mu; p_(mu,x)) = mat(gamma, gamma beta; gamma beta, gamma) mat(E_mu^*; abs(vb(p)_(mu)^*) cos theta^*)
+  $
+  从而
+  $
+    p_(mu,x) = gamma beta E_mu^* + gamma abs(vb(p)_(mu)^*) cos theta^* < 0
+  $
+  而
+  $
+    p_(mu,x) >= gamma beta E_mu^* - gamma abs(vb(p)_(mu)^*)
+  $
+  从而
+  $
+    gamma beta E_mu^* - gamma abs(vb(p)_(mu)^*) < 0
+  $
+  即
+  $
+    beta < abs(vb(p)_(mu)^*) / E_mu^* = (m_pi^2 - m_mu^2) / (m_pi^2 + m_mu^2) approx 0.271
+  $
+  从而
+  $
+    p_pi = gamma beta m_pi < 0.271 / sqrt(1 - 0.271^2) m_pi approx 0.040 "GeV"
+  $
 ]
 
 #exercise(subname: [1.15])[
@@ -161,6 +283,66 @@
   ][
     the energy and momentum of the $pi$, and the angle and momentum of the $p$ in the L frame.
   ]
+]
+
+#solution[
+  - 在质心系中，四动量为
+    $
+      p_(Lambda)^* & = (m_(Lambda)^*, vb(0)) \
+           p_(p)^* & = (E_(p)^*, vb(p)_p^*) \
+          p_(pi)^* & = (E_(pi)^*, vb(p)_pi^*)
+    $
+    从而
+    $
+      E_(Lambda)^* = m_(Lambda) = 1.115 "GeV", vb(p)_Lambda^* = vb(0)
+    $
+    由上面的讨论可知
+    $
+              E_(p)^* & = (m_(Lambda)^2 + m_p^2 - m_pi^2) / (2 m_(Lambda)) approx 0.944 "GeV" \
+             E_(pi)^* & = (m_(Lambda)^2 + m_pi^2 - m_p^2) / (2 m_(Lambda)) approx 0.172 "GeV" \
+      abs(vb(p)_pi^*) & = abs(vb(p)_p^*) = sqrt(E_(p)^*^2 - m_p^2) = sqrt(E_(pi)^*^2 - m_pi^2) approx 0.101 "GeV" \
+            vb(p)_p^* & = abs(vb(p)_p^*) (cos theta_p^*, sin theta_p^*, 0) \
+           vb(p)_pi^* & = -vb(p)_p^*
+    $
+  - Lorentz变换参数为
+    $
+      beta = abs(vb(p)_Lambda) / E_(Lambda) = 2 / sqrt(2^2 + 1.115^2) approx 0.873 \
+      gamma = 1 / sqrt(1 - beta^2) approx 2.05
+    $
+  - 实验室系中，四动量为
+    $
+      p_(Lambda) & = (E_(Lambda), vb(p)_Lambda) \
+           p_(p) & = (E_(p), vb(p)_p) \
+          p_(pi) & = (E_(pi), vb(p)_pi)
+    $
+    Lorentz变换为
+    $
+      mat(E_(pi); p_(pi,x); p_(pi,y)) = mat(gamma, gamma beta, 0; gamma beta, gamma, 0; 0, 0, 1) mat(E_(pi)^*; vb(p)_(pi,x)^*; vb(p)_(pi,y)^*)
+    $
+    从而
+    $
+        E_(pi) & = gamma E_(pi)^* + gamma beta vb(p)_(pi,x)^* = 0.197 "GeV" \
+      p_(pi,x) & = gamma beta E_(pi)^* + gamma vb(p)_(pi,x)^* = 0.133 "GeV" \
+      p_(pi,y) & = vb(p)_(pi,y)^* = -0.048 "GeV" \
+    $
+    从而
+    $
+      abs(vb(p)_pi) = sqrt(p_(pi,x)^2 + p_(pi,y)^2) approx 0.139 "GeV" \
+    $
+    以及
+    $
+      mat(E_(p); p_(p,x); p_(p,y)) = mat(gamma, gamma beta, 0; gamma beta, gamma, 0; 0, 0, 1) mat(E_(p)^*; vb(p)_(p,x)^*; vb(p)_(p,y)^*)
+    $
+    从而
+    $
+      p_(p,x) & = gamma beta E_(p)^* + gamma vb(p)_(p,x)^* = 1.87 "GeV" \
+      p_(p,y) & = vb(p)_(p,y)^* = 0.050 "GeV" \
+    $
+    从而
+    $
+      abs(vb(p)_p) = sqrt(p_(p,x)^2 + p_(p,y)^2) approx 1.87 "GeV" \
+      theta_p = arctan(p_(p,y) / p_(p,x)) approx 1.54 degree
+    $
 ]
 
 #exercise(subname: [1.18])[
