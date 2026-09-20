@@ -612,7 +612,342 @@ $t$和$u$称为四维动量转移的平方。这三个变量称为Mandelstam变�
 
 粒子反应很多物理量与参考系无关，例如反应截面，这些物理量是系统Lorentz不变量的函数。
 
-== 碰撞和衰变
+== 碰撞和衰变 (Collisions and decays)
+
+粒子物理处理两种过程：*碰撞和衰变*
+- *碰撞*是两个粒子相互作用的过程，通常是两个粒子相互靠近，发生相互作用后分开
+  $
+    a + b -> c + d + ...
+  $
+  关注反应的*散射截面*（cross section）$sigma$
+- *衰变*是一个粒子自发地分裂为两个或多个粒子的过程
+  $
+    a -> b + c + ...
+  $
+  关注反应的*衰变宽度*（decay width）$Gamma$
+本质上都是计算单位时间发生相互作用的次数
+
+标准模型给出了跃迁矩阵元
+$
+  M_(f i) = braket(f, hat(S), i)
+$
+的计算方法，进而可以计算散射截面和衰变宽度。标准模型的计算方法是Feynman图和Feynman规则。
+
+下面我们先计算如何由$M_(f i)$得到散射截面和衰变宽度。
+
+=== 散射过程的一般描述
+
+我们认为处态$Phi_i$和末态$Phi_f$是自由粒子态，处于无限远的过去和未来，看作是*无相互作用*的。它们是相互作用的粒子态$Psi_i$和$Psi_f$在$t -> -oo, +oo$极限下的极限。
+
+相互作用发生在$[-T/2, T/2]$
+$
+  cal(L)_I (x) & -> f(x) cal(L)_I (x) \
+          f(t) & = cases(
+                   1\, -T/2 < t < T/2,
+                   0\, "else"
+                 )
+$
+而$T->oo$则相互作用始终发生。
+
+量子场论相互作用前后的粒子数可能改变，我们认为态不再在同一个Hilbert空间中，而是处于Fock空间中。用$S$矩阵算符来联系初、末态
+$
+  ket(Psi_f) = hat(S) ket(Phi_i)
+$
+其中$hat(S)$是散射算符，事实上是时间演化
+$
+  hat(U)(t, t_0) = T exp(-i integral_(t_0)^t dd(t') hat(H)(t'))
+$
+
+#note[
+  Fock空间是Hilbert空间的直和
+  $
+    cal(H) = plus.o.big_n cal(H)_n
+  $
+]
+
+#newpara()
+设系统的一组正交、归一的完全集
+$
+  braket(i, j) = delta_(i j), sum_i ketbra(i) = 1
+$
+对于任意初态，经散射后
+$
+  ket(Psi_i) = hat(S) ket(Phi_i)
+$
+经散射后测到态$ket(j)$的几率
+$
+  P_(i->j) = abs(braket(j, Psi_i))^2 = abs(braket(j, hat(S), i))^2
+$
+从而
+$
+  1 & = sum_j abs(S_(j i))^2 = sum_j braket(j, hat(S), Phi_i)^* braket(j, hat(S), Phi_i) \
+    & = sum_j braket(Phi_i, hat(S)^dagger, j) braket(j, hat(S), Phi_i) \
+    & = braket(Phi_i, hat(S)^dagger hat(S), Phi_i)
+$
+从而有
+$
+  hat(S)^dagger hat(S) = 1
+$
+即$S$矩阵是*幺正*的。
+
+我们把没有散射的过程提出来
+$
+  hat(S) = 1 + i hat(T)
+$
+对于任意两个态$ket(a), ket(b)$，称
+$
+  braket(a, hat(T), b)
+$
+为*跃迁振幅*。由$S$矩阵的幺正性，可以得到*光学定理*
+$
+  Im braket(a, hat(T), b) = 1/2 sum_i braket(i, hat(T), b) braket(i, hat(T), a)^*
+$
+特别地
+$
+  Im braket(a, hat(T), a) = 1/2 sum_i abs(braket(i, hat(T), a))^2
+$
+意味着前向散射跃迁振幅虚部与所有可能的散射过程的总和有关，在实验上可以通过前向散射的虚部（弹性碰撞延拓可算）得到总反应截面。
+
+在固有Lorentz变换$Lambda$下，如果态的变换关系是
+$
+  ket(a') = hat(U)(Lambda) ket(a)
+$
+考虑到任意两个态之间的跃迁几率是一个Lorentz不变量，则
+$
+  braket(a, hat(S), b) = braket(a', hat(S), b')
+$
+就有
+$
+  hat(U)(Lambda) hat(S) hat(U)^(-1)(Lambda) = hat(S)
+$
+就有
+$
+  [hat(U), hat(S)] = 0
+$
+这表明$S$矩阵是*Lorentz协变*的。也就是说先做Lorentz变换再散射，和先散射再做Lorentz变换是等价的。
+
+将$S$矩阵元
+$
+  S_(f i) = braket(Phi_f, hat(S), Phi_i)
+$
+与实验观测相联系时，需要仔细处理态的*归一化问题*。当
+$
+  braket(Phi_f) = braket(Phi_i) = 1
+$
+$S$矩阵元可以理解为跃迁振幅，而$abs(S_(f i))^2$就是跃迁几率。
+
+对于有确定动量的态（平面波），严格意义上是不能归一化的，通常将平面波归一化到
+$
+  braket(vb(p)', vb(p)) = N delta^3(vb(p)' - vb(p))
+$
+其中$N$是一个因子，在教科书、文献中有多种取法。最终的物理结果不依赖因子的取法。
+
+#note(subname: [$delta$函数])[
+
+  $delta$函数的定义是
+  $
+    integral dd(x) delta(x - x_0) f(x) = f(x_0)
+  $
+  有一些简单性质
+  $
+        delta(-x) & = delta(x) \
+       delta(a x) & = 1/abs(a) delta(x) \
+    delta(phi(x)) & = sum_i delta(x - x_i)/abs(phi'(x_i)), x_i"是"phi(x)"的单根"
+  $
+  以及Fourier变换关系
+  $
+    delta(x) & = 1/(2 pi) integral dd(k) e^(i k x) \
+  $
+]
+#newpara()
+
+为了正确处理平面波的归一化问题，将波限制在有限的空间$V$中，称为*箱归一化*
+$
+  V = L^3, L->oo
+$
+周期性边条件（保证动量算符Hermite性）要求动量只能取分立的值
+$
+  vb(p) = (2 pi)/L (n_x, n_y, n_z), n_i in ZZ
+$
+这说明在动量空间，每个态占据的体积元是
+$
+  ((2p)/L)^3 = (2 pi)^3/V
+$
+在$vb(p) -> vb(p) + dd(vb(p))$中动量间隔内态的数目是
+$
+  dd(n) = V/(2 pi)^3 dd(vb(p))
+$
+在箱内，$delta$函数可以表达成
+$
+  delta(vb(p)' - vb(p)) = 1/(2pi)^3 integral_V dd(vb(x)) e^(i (vb(p)' - vb(p)) dot vb(x)) = V/(2 pi)^3 delta_(vb(p)', vb(p))
+$
+如果定义
+$
+  ket(vb(p))^"box" = sqrt((2pi)^3/(N V)) ket(vb(p))
+$
+则得到一组正交归一的态
+$
+  ""^"box" braket(vb(p)', vb(p))^"box" = delta_(vb(p)', vb(p))
+$
+用平面波作为初、末态时，跃迁振幅是
+$
+  S_(f i)^"box" = ""^"box"braket(Phi_f, hat(S), Phi_i)^"box" = sqrt((2 pi)^3/(N V))^n braket(Phi_f, hat(S), Phi_i)
+$
+其中
+$
+  n = n_i + n_f
+$
+分别是初态和末态粒子数。将$S$矩阵表达成
+$
+  hat(S) = 1 + i (2 pi)^4 delta^4(p_i - p_f) hat(M)
+$
+其中$i (2pi)^4$是时空平移不变性给出的因子，$hat(M)$是*跃迁矩阵元*。于是当初、末态不相同时，跃迁几率
+$
+  P_(i->f) & = abs(S_(f i)^"box")^2 \
+           & = (2pi)^4 delta^4(p_i - p_f) (2 pi)^4 delta^4(0) ((2pi)^3/(V N))^(n_i + n_f) abs(M_(f i))^2 \
+           & = ((2pi)^3/(V N))^(n_i + n_f) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2
+$
+上式中利用了
+$
+  (2pi)^4 delta^4(0) = integral dd(x, 4) = V T
+$
+标准模型就给出了
+$
+  M_(f i) = braket(Phi_f, hat(M), Phi_i)
+$
+的运算。
+
+从具有确定动量的初态，跃迁到$vb(p) -> vb(p) + dd(vb(p))$动量间隔内的*微分跃迁几率*
+$
+  dd(P(i->f)) & = ((2pi)^3/(V N))^(n_i + n_f) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2 (V/(2pi)^3)^(n_f) product_(j=1)^n_f dd(vb(p)_j, 3) \
+  & = ((2pi)^3/(V N))^(n_i) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2 product_(j=1)^n_f dd(vb(p)_j, 3)/N
+$
+如果取归一化因子为
+$
+  N = (2 pi)^3 2 E_vb(p)\
+  braket(vb(p)', vb(p)) = 2 E_vb(p) delta^3(vb(p)' - vb(p))
+$
+这时跃迁几率的表达式形式上比较简单
+$
+  dd(P(i->f)) & = product_(i=1)^n_i 1/(V 2 E_i) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2 product_(j=1)^n_f dd(vb(p)_j, 3)/((2pi)^3 2 E_j)
+$
+上式的每一项、包括归一化条件都是Lorentz不变的。其它常见的归一化，如
+$
+  braket(vb(p)', vb(p)) = delta^3(vb(p)' - vb(p))
+$
+跃迁几率中的各项可能不是Lorentz不变的，但最终跃迁几率本身是不变的。
+
+这就给出了*$n$体末态相空间*
+$
+  dd(Phi_n) = (2pi)^4 delta^4(p_i - p_f) product_(j=1)^n_f dd(vb(p)_j, 3)/((2pi)^3 2 E_j)
+$
+称为$n$体末态相空间体积元。
+#note(subname: [Lorentz不变性])[
+
+]
+
+#newpara()
+相空间的大小直接决定着反应几率的大小。一般情况下，这个积分的计算相当复杂。如果所有末态粒子的质量都为零，$n$体末态相空间不变体积为$Phi_n$
+$
+  Phi_n = integral product_(j=1)^n dd(vb(p)_j, 3)/((2pi)^3 2 E_j) (2pi)^4 delta^4(p_i - p_f)
+$
+则有
+$
+  Phi_2 = (2pi)^4 1/(4(2pi)^5), Phi_3 = (2pi)^4 s/(32(2pi)^7)\
+  Phi_3/Phi_2 = s/(32 pi^2)
+$
+对于一般的$n$，可以导出递推公式
+$
+  Phi_(n+1)/Phi_n = s/(16 pi^2 n (n-1))
+$
+由此得到普遍公式
+$
+  Phi_n = (2pi)^4 /(4(2pi)^5 (n-1)! (n-2)!) (s/(16 pi^2))^(n-2)
+$
+$Phi_n$的量纲随$n$不同而不同。为了便于比较，可以定义无量纲化的$n$体末态相空间不变体积$Φ'_n$为
+$
+  Phi'_n = Phi_n /s^(n-2)
+$
+这样$Phi'_n$的递推公式和表达式中都不再出现$s$了。
+
+末态粒子的质量为零时无量纲化的三体相空间约为无量纲化的二体相空间的$1 / 315.8$。一般说来，末态粒子增加一个，相应地无量纲化的相空间要减少两个数量级，这是在多体衰变和多粒子产生过程中，产生的粒子越多，概率越小的运动学原因。
+
+=== 衰变宽度
+
+衰变宽度是描述粒子衰变快慢的一个物理量，它与粒子的寿命有关。衰变宽度越大，粒子的寿命越短。
+
+$
+  dd(P(i->f)) = product 1/(V 2 E_i) V T abs(M_(f i))^2 dd(Phi_n_f)
+$
+$n_i=1$有
+$
+  dd(P(i->f))/T = 1/(2 E_i) abs(M_(f i))^2 dd(Phi_n_f)
+$
+表示单位时间的跃迁几率。
+
+考虑到箱归一化后在体积$V$中的粒子数是$1$，再由衰变宽度的定义：
+$
+  1/(N(t)) dv(N(t), t) = - Gamma
+$
+因此粒子衰变的微分宽度就是
+$
+  dd(Gamma) = dd(P(i->f))/T = 1/(2 E_i) abs(M_(f i))^2 dd(Phi_n_f)
+$
+
+=== 散射截面
+
+考虑打靶过程（$A$－入射粒子，$B$－靶）
+$
+  A + B -> 1 + 2 + ... + n
+$
+在时间$T$内的反应数
+$
+  N_"int" prop rho_A v_A T rho_B l_B S
+$
+其中
+- $rho_A$是入射粒子数密度
+- $v_A$是入射粒子速度
+- $rho_B$是靶粒子数密度
+- $l_B$是靶厚度
+- $S$是靶面积
+- $N_"int"$是反应数
+散射截面定义为
+$
+  sigma = N_"int"/(rho_A v_A T rho_B l_B S)
+$
+截面具有面积的量纲，可以看成是“有效横截面积”。
+
+采用平面波和箱归一化时，对
+$
+  dd(P(i->f)) = 1/(V 2 E_A) 1/(V 2 E_B) V T abs(M_(f i))^2 dd(Phi_n_f)
+$
+应做如下的理解
+- $l_B = L, S = L^2$
+- $rho_A = rho_B = 1/V$
+- 一般有
+  $
+    v_A = abs(vb(p)_A)/E_A
+  $
+  二者相对速度为
+  $
+    abs((vb(p)_A)/(E_A) - (vb(p)_B)/(E_B))
+  $
+最后，散射的微分截面可以写成
+$
+  dd(sigma) = 1/(4 E_A E_B abs((vb(p)_A)/(E_A) - (vb(p)_B)/(E_B))) abs(M_(f i))^2 dd(Phi_n_f)
+$
+#newpara()
+
+以下说明对散射截面和衰变宽度都适用：
+- 如果末态有$m$个全同粒子，则上述需乘以因子
+  $
+    1/m!
+  $
+- －对有自旋的情形
+  - 如果初态非极化：对所有初态极化*求平均*
+  - 如果对末态不测量极化：对所有末态极化*求和*
+
+对于$A + B -> C + D$, 在质心系中有
 
 == 辐射粒子与物质的相互作用
 
