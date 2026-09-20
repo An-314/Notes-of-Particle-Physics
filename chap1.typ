@@ -700,7 +700,7 @@ $
 $
 为*跃迁振幅*。由$S$矩阵的幺正性，可以得到*光学定理*
 $
-  Im braket(a, hat(T), b) = 1/2 sum_i braket(i, hat(T), b) braket(i, hat(T), a)^*
+  braket(a, hat(T), b) - braket(b, hat(T), a)^* = i sum_i braket(i, hat(T), b)^* braket(i, hat(T), a)
 $
 特别地
 $
@@ -797,11 +797,20 @@ $
 $
   n = n_i + n_f
 $
-分别是初态和末态粒子数。将$S$矩阵表达成
+分别是初态和末态粒子数。
+
+
+将$S$矩阵表达成
 $
   hat(S) = 1 + i (2 pi)^4 delta^4(p_i - p_f) hat(M)
 $
-其中$i (2pi)^4$是时空平移不变性给出的因子，$hat(M)$是*跃迁矩阵元*。于是当初、末态不相同时，跃迁几率
+其中$i (2pi)^4$是时空平移不变性给出的因子，$hat(M)$是*跃迁矩阵元*，$delta(p_i - p_f)$是四维动量守恒，是
+$
+  delta^4(p_i - p_f) = delta(E_i - E_f) delta^3(p_i - p_f)
+$
+表示能量和动量守恒。
+
+于是当初、末态不相同时，跃迁几率
 $
   P_(i->f) & = abs(S_(f i)^"box")^2 \
            & = (2pi)^4 delta^4(p_i - p_f) (2 pi)^4 delta^4(0) ((2pi)^3/(V N))^(n_i + n_f) abs(M_(f i))^2 \
@@ -817,14 +826,17 @@ $
 $
 的运算。
 
-从具有确定动量的初态，跃迁到$vb(p) -> vb(p) + dd(vb(p))$动量间隔内的*微分跃迁几率*
+从具有确定动量的初态，跃迁到$vb(p) -> vb(p) + dd(vb(p))$动量间隔内的*微分跃迁几率*是跃迁几率乘以末态数
 $
   dd(P(i->f)) & = ((2pi)^3/(V N))^(n_i + n_f) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2 (V/(2pi)^3)^(n_f) product_(j=1)^n_f dd(vb(p)_j, 3) \
   & = ((2pi)^3/(V N))^(n_i) V T (2 pi)^4 delta^4(p_i - p_f) abs(M_(f i))^2 product_(j=1)^n_f dd(vb(p)_j, 3)/N
 $
 如果取归一化因子为
 $
-  N = (2 pi)^3 2 E_vb(p)\
+  N = (2 pi)^3 2 E_vb(p)
+$
+relativistic normalization，有
+$
   braket(vb(p)', vb(p)) = 2 E_vb(p) delta^3(vb(p)' - vb(p))
 $
 这时跃迁几率的表达式形式上比较简单
@@ -837,16 +849,51 @@ $
 $
 跃迁几率中的各项可能不是Lorentz不变的，但最终跃迁几率本身是不变的。
 
+#note(subname: [Lorentz不变性])[
+  - $dd(vb(p), 3)/((2pi)^3 2 E)$是Lorentz不变的
+
+    由于$dd(p, 4)$是Lorentz不变的，加上质壳条件$p^2 = m^2$，有
+    $
+      dd(p, 4) delta(p^2 - m^2) theta(p^0)
+    $
+    而
+    $
+      delta(p^2 - m^2) = delta((p^0)^2 + vb(p)^2 - (E^2 - vb(p)^2)) = delta((p^0)^2 - E^2)
+    $
+    再注意到
+    $
+      delta(f(x)) = sum_i delta(x - x_i)/abs(f'(x_i)), x_i"是"f(x)"的单根"
+    $
+    有
+    $
+      delta((p^0)^2 - E^2) = 1/(2 E) (delta(p^0 - E) + delta(p^0 + E))
+    $
+    而$theta$是Heaviside阶跃函数
+    $
+      integral dd(p^0) delta((p^0)^2 - E^2) theta(p^0) = 1/(2 E)
+    $
+    于是
+    $
+      dd(p, 4) delta(p^2 - m^2) theta(p^0) = dd(vb(p), 3)/(2 E)
+    $
+    从而是Lorentz不变的。
+]
+#newpara()
 这就给出了*$n$体末态相空间*
 $
   dd(Phi_n) = (2pi)^4 delta^4(p_i - p_f) product_(j=1)^n_f dd(vb(p)_j, 3)/((2pi)^3 2 E_j)
 $
 称为$n$体末态相空间体积元。
-#note(subname: [Lorentz不变性])[
 
-]
+所以我们说
+$
+  dd(P(i->f)) = product_(i=1)^n_i 1/(V 2 E_i) V T abs(M_(f i))^2 dd(Phi_n_f)
+$
+粒子反应
+- 动力学$abs(M_(f i))^2$由标准模型给出
+- 运动学$dd(Phi_n_f)$由相空间给出
+- 归一化因子$1/(V 2 E_i)$处理平面波给出
 
-#newpara()
 相空间的大小直接决定着反应几率的大小。一般情况下，这个积分的计算相当复杂。如果所有末态粒子的质量都为零，$n$体末态相空间不变体积为$Phi_n$
 $
   Phi_n = integral product_(j=1)^n dd(vb(p)_j, 3)/((2pi)^3 2 E_j) (2pi)^4 delta^4(p_i - p_f)
@@ -855,6 +902,10 @@ $
 $
   Phi_2 = (2pi)^4 1/(4(2pi)^5), Phi_3 = (2pi)^4 s/(32(2pi)^7)\
   Phi_3/Phi_2 = s/(32 pi^2)
+$
+其中
+$
+  s = p_i^2
 $
 对于一般的$n$，可以导出递推公式
 $
@@ -885,9 +936,12 @@ $
 $
 表示单位时间的跃迁几率。
 
-考虑到箱归一化后在体积$V$中的粒子数是$1$，再由衰变宽度的定义：
+考虑到箱归一化后在体积$V$中的粒子数是$1$，再由衰变宽度的定义
 $
   1/(N(t)) dv(N(t), t) = - Gamma
+$
+$
+  dd(P) = Gamma dd(t)
 $
 因此粒子衰变的微分宽度就是
 $
@@ -932,6 +986,12 @@ $
   $
     abs((vb(p)_A)/(E_A) - (vb(p)_B)/(E_B))
   $
+  更一般的 Lorentz 协变写法通常把整个 flux factor 写成
+  $
+    1/(4 ((p_A dot p_B)^2 - m_A^2 m_B^2)^(1/2))
+  $
+  在适当的共线参考系下，它就退化为上式。
+
 最后，散射的微分截面可以写成
 $
   dd(sigma) = 1/(4 E_A E_B abs((vb(p)_A)/(E_A) - (vb(p)_B)/(E_B))) abs(M_(f i))^2 dd(Phi_n_f)
