@@ -415,7 +415,37 @@ $
 
 === 快度和赝快度 (rapidity and pseudo-rapidity)
 
-粒子沿某一方向的快慢也可以用*快度*$y$来描写，定义如下
+注意到
+$
+  mat(E'; p'_z) = mat(gamma_f, -gamma_f beta_f; -gamma_f beta_f, gamma_f) mat(E; p_z)
+$
+其中
+$
+  beta_f = v_f, gamma_f = 1/sqrt(1 - beta_f^2)
+$
+从而有
+$
+  gamma_f^2 - (gamma_f beta_f)^2 = 1
+$
+而双曲函数恰好满足
+$
+  cosh^2 y - sinh^2 y = 1
+$
+自然令
+$
+  gamma = cosh y, gamma beta = sinh y
+$
+则有
+$
+  mat(E'; p'_z) = mat(cosh y_f, -sinh y_f; -sinh y_f, cosh y_f) mat(E; p_z)
+$
+Lorentz boost 保持
+$
+  E^2 - p_z^2 = m_T^2
+$
+$y$就是Minkowski空间中的双曲角。
+
+于是粒子沿某一方向的快慢也可以用*快度*$y$来描写，定义如下
 $
   tanh y = beta_parallel = p_parallel / E
 $
@@ -423,25 +453,58 @@ $
 $
   y = beta_parallel + O(beta_parallel^3)
 $
-在纵向（$parallel$方向）洛伦兹变换下，快度的变换规律为
+其中
 $
-  y^* = y - y_f
+  tanh x = (sinh x) / (cosh x) = (e^x - e^(-x)) / (e^x + e^(-x))
 $
-其中$y_f$是两个参考系之间的相对快度。快度的变换规律是一个重要的相对论效应。
+#newpara()
+
+对于横质量为$m_T$的粒子
 $
-  y = 1/2 ln((E + p_parallel)/(E - p_parallel)) = 1/2 ln((1 + beta_parallel)/(1 - beta_parallel))\
-  y_f = 1/2 ln((1 + beta_f)/(1 - beta_f))
+  m_T = sqrt(m^2 + p_T^2)
 $
-还可以得到
+为横质量，在纵向Lorentz变换下不变；还可以得到
 $
   p_parallel = m_T sinh y\
   E = m_T cosh y
 $
-其中
+
+#newpara()
+现在做一个快度为$y_f$的 Lorentz boost
 $
-  m_T = sqrt(m^2 + p_T^2)
+           E' & = m cosh y cosh y_f - m sinh y sinh y_f = m cosh(y - y_f) \
+  p'_parallel & = m sinh y cosh y_f - m cosh y sinh y_f = m sinh(y - y_f) \
+         p'_T & = p_T
 $
-为横质量，在纵向Lorentz变换下不变。
+从而在纵向（$parallel$方向）洛伦兹变换下，快度的变换规律为
+$
+  y^* = y - y_f
+$
+其中$y_f$是两个参考系之间的相对快度。快度的变换规律是一个重要的相对论效应。
+
+#newpara()
+而
+$
+  tanh y = (e^(2y) - 1) / (e^(2y) + 1)
+$
+从而
+$
+  beta_parallel = (e^(2y) - 1) / (e^(2y) + 1)
+$
+即
+$
+  e^(2 y) = (1 + beta) / (1 - beta)
+$
+从而在
+$
+  y^* = y - y_f
+$
+中
+$
+  y = 1/2 ln((E + p_parallel)/(E - p_parallel)) = 1/2 ln((1 + beta_parallel)/(1 - beta_parallel))\
+  y_f = 1/2 ln((1 + beta_f)/(1 - beta_f))
+$
+#newpara()
 
 实验分析中，常用*赝快度*$eta$代替快度，定义为
 $
@@ -451,7 +514,10 @@ $
 $
   eta = - 1/2 ln ((abs(vb(p)) + p_parallel)/(abs(vb(p)) - p_parallel))
 $
-如果$m << p_T$，快度与赝快度相差很小。
+如果$m << p_T$，快度与赝快度相差很小
+$
+  y approx eta
+$
 
 === 粒子的运动定律 (the law of motion of a particle)
 
