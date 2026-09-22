@@ -1073,7 +1073,157 @@ $
   - 如果初态非极化：对所有初态极化*求平均*
   - 如果对末态不测量极化：对所有末态极化*求和*
 
+#example(subname: [碰撞微分截面])[
+  $
+    A + B-> C + D
+  $
+  的微分截面为
+  $
+    dv(sigma, Omega) = 1/(64 pi^2 s) abs(vb(p)')/abs(vb(p)) abs(M_(f i))^2
+  $
+]
+
 对于$A + B -> C + D$, 在质心系中有
+$
+  p_A = (E_A, vb(p)), p_B = (E_B, -vb(p)), p_C = (E_C, vb(p)'), p_D = (E_D, -vb(p)')
+$
+其中
+$
+  s = (E_A + E_B)^2 = (E_C + E_D)^2 = E_"cm"^2
+$
+且有
+$
+  m_A^2 = E_A^2 - vb(p)^2, m_B^2 = E_B^2 - vb(p)^2, m_C^2 = E_C^2 - vb(p)'^2, m_D^2 = E_D^2 - vb(p)'^2
+$
+从而
+$
+  E_A + E_B & = sqrt(s) \
+  E_A - E_B & = (m_A^2 - m_B^2)/sqrt(s) \
+$
+有
+$
+  E_A = (s + m_A^2 - m_B^2)/(2 sqrt(s)), E_B = (s + m_B^2 - m_A^2)/(2 sqrt(s))
+$
+从而初动量
+$
+  vb(p)^2 = E_A^2 - m_A^2 = (s + m_A^2 - m_B^2)^2/(4 s) - m_A^2 = ((s - (m_A + m_B)^2)(s - (m_A - m_B)^2))/(4 s)
+$
+从而末动量
+$
+  vb(p)'^2 = ((s - (m_C + m_D)^2)(s - (m_C - m_D)^2))/(4 s)
+$
+#newpara()
+而微分散射截面是
+$
+  dd(sigma) = 1/(2E_A 2E_B abs(vb(p)_A/E_A - vb(p)_B/E_B)) abs(M_(f i))^2 dd(Phi_2)
+$
+其中
+$
+  dd(Phi_2) = (2pi)^4 delta^4(p_i - p_f) dd(vb(p)_C, 3)/((2pi)^3 2 E_C) dd(vb(p)_D, 3)/((2pi)^3 2 E_D)
+$
+就有
+$
+  dd(sigma) =& 1/(2E_A 2E_B abs(vb(p)) (1/E_A + 1/E_B)) abs(M_(f i))^2 \ &(2pi)^4 delta(sqrt(s) - E_C - E_D) delta^3(vb(p)_C + vb(p)_D) dd(vb(p)_C, 3)/((2pi)^3 2 E_C) dd(vb(p)_D, 3)/((2pi)^3 2 E_D)\
+  =& 1/(4 abs(vb(p)) sqrt(s)) abs(M_(f i))^2 \ & (2pi)^4 delta(sqrt(s) - E_C - E_D) dd(vb(p)_C, 3)/((2pi)^3 2 E_C) 1/((2pi)^3 2 E_D)\
+  =& 1/(4 abs(vb(p)) sqrt(s)) abs(M_(f i))^2 1/(2pi)^2 delta(sqrt(s) - E_C - E_D) dd(vb(p)_C, 3)/(4 E_C E_D)
+$
+其中
+$
+  dd(vb(p), 3) = vb(p)^2 dd(abs(vb(p))) dd(Omega)
+$
+则
+$
+  dd(sigma) = 1/(4 abs(vb(p)) sqrt(s)) abs(M_(f i))^2 1/(2pi)^2 delta(sqrt(s) - E_C - E_D) vb(p)_C^2 (dd(abs(vb(p)_C)) dd(Omega))/(4 E_C E_D)
+$
+注意到
+$
+  delta(f(p)) = delta(p - p_0)/abs(f'(p_0)), f(p) = sqrt(s) - sqrt(m_C^2 + p^2) - sqrt(m_D^2 + p^2)
+$
+从而
+$
+  f'(p) = - p/sqrt(m_C^2 + p^2) - p/sqrt(m_D^2 + p^2) = - p (1/E_C + 1/E_D) = - (p sqrt(s))/(E_C E_D)
+$
+故
+$
+  delta(sqrt(s) - E_C - E_D) = delta(abs(vb(p)') - abs(vb(p)_C)) (E_C E_D)/(abs(vb(p)') sqrt(s))
+$
+从而
+$
+  dd(sigma) &= 1/(4 abs(vb(p)) sqrt(s)) abs(M_(f i))^2 1/(2pi)^2 vb(p)'^2 (dd(abs(vb(p)')) dd(Omega))/(4 E_C E_D) (E_C E_D)/(abs(vb(p)') sqrt(s)) \
+  &= 1/(64 pi^2 s) abs(M_(f i))^2 abs(vb(p)')/abs(vb(p)) dd(Omega)
+$
+得到微分截面
+$
+  dv(sigma, Omega) = 1/(64 pi^2 s) abs(vb(p)')/abs(vb(p)) abs(M_(f i))^2
+$
+#newpara()
+#example(subname: [三体衰变宽度])[
+  $
+    M -> m_1 + m_2 + m_3
+  $
+  假设衰变振幅与衰变平面的取向无关，衰变宽度为
+  $
+    dd(Gamma) = 1/(2pi)^3 1/(8 M) abs(M_(f i))^2 dd(E_1) dd(E_2)
+  $
+]
+三体衰变，在质心系
+$
+  p = (M, 0), p_1 = (E_1, vb(p)_1), p_2 = (E_2, vb(p)_2), p_3 = (E_3, vb(p)_3)
+$
+则衰变宽度是
+$
+  dd(Gamma) = 1/(2 M) abs(M_(f i))^2 dd(Phi_3)
+$
+如果末态三粒子的动量在同一平面。假设衰变振幅与衰变平面的取向无关，则有
+$
+  dd(Phi_3) &= (2pi)^4 delta^4(p_1 + p_2 + p_3) dd(vb(p)_1, 3)/((2pi)^3 2 E_1) dd(vb(p)_2, 3)/((2pi)^3 2 E_2) dd(vb(p)_3, 3)/((2pi)^3 2 E_3)\
+  &= 1/((2pi)^5) delta(M - E_1 - E_2 - E_3) delta^3(vb(p)_1 + vb(p)_2 + vb(p)_3) (dd(vb(p)_1, 3) dd(vb(p)_2, 3) dd(vb(p)_3, 3))/(8 E_1 E_2 E_3)\
+  & = 1/(8(2pi)^5) delta(M - E_1 - E_2 - sqrt(m_3^2 + (vb(p)_1 + vb(p)_2)^2)) (vb(p)_1^2 vb(p)_2^2 dd(abs(vb(p)_1), Omega_1) dd(abs(vb(p)_2), Omega_2))/(E_1 E_2 E_3)
+$
+其中不妨，考虑$vb(p)_2$的立体角以$vb(p)_1$方向为$z$方向定义
+$
+  dd(Omega_2) = dd(Omega_12) = dd(cos theta_12) dd(phi_12)
+$
+有
+$
+  dd(Phi_3) & =1/(4(2pi)^3) delta(M - E_1 - E_2 - sqrt(m_3^2 + (vb(p)_1 + vb(p)_2)^2)) (vb(p)_1^2 vb(p)_2^2 dd(abs(vb(p)_1)) dd(abs(vb(p)_2), cos theta_12))/(E_1 E_2 E_3)
+$
+而
+$
+  delta(M - E_1 - E_2 - sqrt(m_3^2 + (vb(p)_1 + vb(p)_2)^2)) dd(cos theta_12) &= 1/abs(dv(f, cos theta_12)) \
+  &= delta(cos theta_12 - cos theta_12^0) E_3/(abs(vb(p)_1) abs(vb(p)_2))
+$
+其中
+$
+  dv(f, cos theta_12) = (abs(vb(p_1)) abs(vb(p)_2))/(m_3^2 + (vb(p)_1 + vb(p)_2)^2)^(1/2)
+$
+从而
+$
+  dd(Phi_3) = 1/(4(2pi)^3) (abs(vb(p)_1) abs(vb(p)_2) dd(abs(vb(p)_1)) dd(abs(vb(p)_2)))/(E_1 E_2)
+$
+而
+$
+  (abs(vb(p)) dd(abs(vb(p))))/E = dd(E)
+$
+就有
+$
+  dd(Phi_3) = 1/(4(2pi)^3) dd(E_1) dd(E_2)
+$
+从而
+$
+  dd(Gamma) = 1/(8(2pi)^3 M) abs(M_(f i))^2 dd(E_1) dd(E_2)
+$
+或者
+$
+  dd(Gamma) = 1/(32(2pi)^3 M^3) abs(M_(f i))^2 dd(m_12^2) dd(m_23^2)
+$
+其中
+$
+                    m_12^2 & = (p_1 + p_2)^2 = M^2 + m_3^2 - 2 M E_3 \
+                    m_23^2 & = (p_2 + p_3)^2 = M^2 + m_1^2 - 2 M E_1 \
+                    m_13^2 & = (p_1 + p_3)^2 = M^2 + m_2^2 - 2 M E_2 \
+  m_12^2 + m_23^2 + m_13^2 & = M^2 + m_1^2 + m_2^2 + m_3^2
+$
 
 == 辐射粒子与物质的相互作用
 
