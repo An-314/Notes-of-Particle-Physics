@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="410" viewBox="0 0 660 410">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#26766c"/></marker>
+    <marker id="track-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#b7463d"/></marker>
+  </defs>
+  <rect width="660" height="410" fill="white"/>
+  <g stroke="#465568" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M65 145 L155 80 L555 80 L465 145 Z" fill="#edf2f6"/>
+    <path d="M65 145 L465 145 L465 345 L65 345 Z" fill="#f9fbfc"/>
+    <path d="M465 145 L555 80 L555 280 L465 345 Z" fill="#cce7e2"/>
+    <path d="M65 345 L155 280 L555 280 M155 80 L155 280" fill="none" stroke-dasharray="5 5" stroke="#a1adb8"/>
+    <path d="M480 134 L480 334 M495 123 L495 323 M510 112 L510 312 M525 101 L525 301 M540 91 L540 291" stroke="#72aaa0"/>
+  </g>
+  <path d="M195 112 Q230 180 255 225 T312 310" fill="none" stroke="#b7463d" stroke-width="3" marker-end="url(#track-arrow)"/>
+  <g fill="#b7463d">
+    <circle cx="222" cy="169" r="4"/><circle cx="244" cy="209" r="4"/>
+    <circle cx="269" cy="247" r="4"/><circle cx="294" cy="284" r="4"/>
+  </g>
+  <g stroke="#26766c" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4">
+    <path d="M230 169 H504"/><path d="M252 209 H504"/>
+    <path d="M277 247 H504"/><path d="M302 284 H504"/>
+  </g>
+  <g fill="#26766c"><circle cx="510" cy="169" r="4"/><circle cx="510" cy="209" r="4"/><circle cx="510" cy="247" r="4"/><circle cx="510" cy="284" r="4"/></g>
+  <g font-family="DejaVu Sans, sans-serif" font-size="17" fill="#273746">
+    <text x="250" y="43">Gas volume</text>
+    <text x="327" y="195" fill="#26766c">electron drift</text>
+    <text x="70" y="118" fill="#b7463d">charged track</text>
+    <text x="392" y="380">Readout plane (x, y)</text>
+    <text x="69" y="394">Drift time gives the z coordinate</text>
+    <text x="71" y="55" fill="#26766c">E ∥ B</text>
+  </g>
+  <path d="M150 67 H72" stroke="#26766c" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
