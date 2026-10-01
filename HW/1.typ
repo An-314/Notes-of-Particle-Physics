@@ -39,11 +39,11 @@
   $
   在质心系中，系统的质量为
   $
-    M^2 = p dot p = 9E^2 = 9 (abs(vb(p))^2 + m_p^2) = 9 ((3 "GeV")^2 + (0.938 "GeV")^2) approx 88.9 "GeV"^2
+    M^2 = p dot p = 9E^2 = 9 (abs(vb(p))^2 + m_p^2) = 9 ((3 "GeV")^2 + (0.938 "GeV")^2) = 88.9 "GeV"^2
   $
   从而
   $
-    M approx 9.43 "GeV"
+    M = 9.43 "GeV"
   $
 ]
 
@@ -53,11 +53,11 @@
   #enum(numbering: "(a)")[
     Find the minimum energy of the photon $E_gamma$.
   ]
-  The Universe is filled by ‘background electromagnetic radiation’ at the temperature of $T = 3 "K"$, and photons with energy $E_(gamma, 3 "K") approx 1 "meV"$.
+  The Universe is filled by ‘background electromagnetic radiation’ at the temperature of $T = 3 "K"$, and photons with energy $E_(gamma, 3 "K") = 1 "meV"$.
   #enum(numbering: "(a)", start: 2)[
     Find the minimum energy $E_p$ of the cosmic-ray protons needed to induce $pi^0$ photoproduction.
   ][
-    If the cross-section, just above threshold, is $sigma = 0.6 "mb"$ and the background photon density is $rho approx 10^8 "m"^(-3)$, find the attenuation length. Is it small or large on the cosmological scale?
+    If the cross-section, just above threshold, is $sigma = 0.6 "mb"$ and the background photon density is $rho = 10^8 "m"^(-3)$, find the attenuation length. Is it small or large on the cosmological scale?
   ]
 ]
 
@@ -108,7 +108,7 @@
       s & = (p_(gamma"i") + p_(p"i")) dot (p_(gamma"i") + p_(p"i")) = (E_gamma + E_p)^2 - abs(vb(p)_gamma + vb(p)_p)^2 \
         & = m_p^2 + 2 E_gamma E_p - 2 vb(p)_gamma dot vb(p)_p \
         & <= m_p^2 + 2 E_gamma E_p + 2 E_gamma abs(vb(p)_p) \
-        & approx m_p^2 + 4 E_gamma E_p
+        & = m_p^2 + 4 E_gamma E_p
     $
     且
     $
@@ -158,7 +158,7 @@
   $
   从而
   $
-    E_p >= ((4 m_p)^2 - 2 m_p^2) / (2 m_p) = 7 m_p approx 6.57 "GeV"
+    E_p >= ((4 m_p)^2 - 2 m_p^2) / (2 m_p) = 7 m_p = 6.57 "GeV"
   $
 ]
 
@@ -205,9 +205,9 @@
   $
   从而
   $
-             E_p & = (M^2 + m_1^2 - m_2^2) / (2 M) approx 0.944 "GeV" \
-            E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) approx 0.172 "GeV" \
-    abs(vb(p)_p) & = abs(vb(p)_pi) = sqrt(E_p^2 - m_1^2) approx 0.101 "GeV"
+             E_p & = (M^2 + m_1^2 - m_2^2) / (2 M) = 0.944 "GeV" \
+            E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) = 0.172 "GeV" \
+    abs(vb(p)_p) & = abs(vb(p)_pi) = sqrt(E_p^2 - m_1^2) = 0.101 "GeV"
   $
   对于 $Xi^- -> Lambda pi^-$，有
   $
@@ -215,9 +215,9 @@
   $
   从而
   $
-             E_Lambda & = (M^2 + m_1^2 - m_2^2) / (2 M) approx 1.124 "GeV" \
-                 E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) approx 0.197 "GeV" \
-    abs(vb(p)_Lambda) & = abs(vb(p)_pi) = sqrt(E_Lambda^2 - m_1^2) approx 0.140 "GeV"
+             E_Lambda & = (M^2 + m_1^2 - m_2^2) / (2 M) = 1.124 "GeV" \
+                 E_pi & = (M^2 + m_2^2 - m_1^2) / (2 M) = 0.197 "GeV" \
+    abs(vb(p)_Lambda) & = abs(vb(p)_pi) = sqrt(E_Lambda^2 - m_1^2) = 0.140 "GeV"
   $
 ]
 
@@ -241,10 +241,10 @@
 ]
 
 #solution[
-  在质心系中，考虑$m_nu approx 0$有
+  在质心系中，考虑$m_nu = 0$有
   $
-               E_mu^* & = (m_pi^2 + m_mu^2) / (2 m_pi) approx 0.110 "GeV" \
-    abs(vb(p)_(mu)^*) & = (m_pi^2 - m_mu^2) / (2 m_pi) approx 0.030 "GeV" \
+               E_mu^* & = (m_pi^2 + m_mu^2) / (2 m_pi) = 0.110 "GeV" \
+    abs(vb(p)_(mu)^*) & = (m_pi^2 - m_mu^2) / (2 m_pi) = 0.030 "GeV" \
   $
   对于实验室系，$beta$为质心系相对于实验室系的速度，$gamma = 1 / sqrt(1 - beta^2)$，则有
   $
@@ -264,11 +264,11 @@
   $
   即
   $
-    beta < abs(vb(p)_(mu)^*) / E_mu^* = (m_pi^2 - m_mu^2) / (m_pi^2 + m_mu^2) approx 0.271
+    beta < abs(vb(p)_(mu)^*) / E_mu^* = (m_pi^2 - m_mu^2) / (m_pi^2 + m_mu^2) = 0.271
   $
   从而
   $
-    p_pi = gamma beta m_pi < 0.271 / sqrt(1 - 0.271^2) m_pi approx 0.040 "GeV"
+    p_pi = gamma beta m_pi < 0.271 / sqrt(1 - 0.271^2) m_pi = 0.040 "GeV"
   $
 ]
 
@@ -298,16 +298,16 @@
     $
     由上面的讨论可知
     $
-              E_(p)^* & = (m_(Lambda)^2 + m_p^2 - m_pi^2) / (2 m_(Lambda)) approx 0.944 "GeV" \
-             E_(pi)^* & = (m_(Lambda)^2 + m_pi^2 - m_p^2) / (2 m_(Lambda)) approx 0.172 "GeV" \
-      abs(vb(p)_pi^*) & = abs(vb(p)_p^*) = sqrt(E_(p)^*^2 - m_p^2) = sqrt(E_(pi)^*^2 - m_pi^2) approx 0.101 "GeV" \
+              E_(p)^* & = (m_(Lambda)^2 + m_p^2 - m_pi^2) / (2 m_(Lambda)) = 0.944 "GeV" \
+             E_(pi)^* & = (m_(Lambda)^2 + m_pi^2 - m_p^2) / (2 m_(Lambda)) = 0.172 "GeV" \
+      abs(vb(p)_pi^*) & = abs(vb(p)_p^*) = sqrt(E_(p)^*^2 - m_p^2) = sqrt(E_(pi)^*^2 - m_pi^2) = 0.101 "GeV" \
             vb(p)_p^* & = abs(vb(p)_p^*) (cos theta_p^*, sin theta_p^*, 0) \
            vb(p)_pi^* & = -vb(p)_p^*
     $
   - Lorentz变换参数为
     $
-      beta = abs(vb(p)_Lambda) / E_(Lambda) = 2 / sqrt(2^2 + 1.115^2) approx 0.873 \
-      gamma = 1 / sqrt(1 - beta^2) approx 2.05
+      beta = abs(vb(p)_Lambda) / E_(Lambda) = 2 / sqrt(2^2 + 1.115^2) = 0.873 \
+      gamma = 1 / sqrt(1 - beta^2) = 2.05
     $
   - 实验室系中，四动量为
     $
@@ -327,7 +327,7 @@
     $
     从而
     $
-      abs(vb(p)_pi) = sqrt(p_(pi,x)^2 + p_(pi,y)^2) approx 0.139 "GeV" \
+      abs(vb(p)_pi) = sqrt(p_(pi,x)^2 + p_(pi,y)^2) = 0.139 "GeV" \
     $
     以及
     $
@@ -340,8 +340,8 @@
     $
     从而
     $
-      abs(vb(p)_p) = sqrt(p_(p,x)^2 + p_(p,y)^2) approx 1.87 "GeV" \
-      theta_p = arctan(p_(p,y) / p_(p,x)) approx 1.54 degree
+      abs(vb(p)_p) = sqrt(p_(p,x)^2 + p_(p,y)^2) = 1.87 "GeV" \
+      theta_p = arctan(p_(p,y) / p_(p,x)) = 1.54 degree
     $
 ]
 
@@ -349,28 +349,280 @@
   A ‘charmed’ meson $D^0$ decays $D^0 -> K^- pi^+$ at a distance from the production point $d = 3 "mm"$ long. Measuring the total energy of the decay products, one finds $E = 30 "GeV"$. How long did the $D$ live in proper time? How large is the $pi^+$ momentum in the $D$ rest-frame?
 ]
 
+#solution[
+
+  飞行距离
+  $
+    d = beta c t_"Lab"
+  $
+  其中
+  $
+    t_"Lab" = gamma tau
+  $
+  是粒子在实验室系中的寿命，$tau$是粒子的固有寿命。所以
+  $
+    tau = d/(beta c gamma)
+  $
+
+  现在求$gamma, beta$，注意到
+  $
+    beta E = p, E = gamma m
+  $
+  从而
+  $
+    beta gamma = p/m
+  $
+  其中
+  $
+    p = sqrt(E^2-m^2)
+  $
+  从而
+  $
+    beta gamma = sqrt(E^2-m^2)/m = sqrt((E/m)^2-1)
+  $
+  固有时间
+  $
+    tau = d/(beta c gamma) = d/(c sqrt((E/m)^2-1)) = 6.23 times 10^(-13) "s"
+  $
+  #newpara()
+  由衰变的结论
+  $
+    p_pi = sqrt((m_D^2-(m_K+m_pi)^2)(m_D^2-(m_K-m_pi)^2))/(2 m_D) = 0.86 "GeV"
+  $
+]
+
 #exercise(subname: [1.19])[
   The primary beam of a synchrotron is extracted and used to produce a secondary monochromatic $pi^-$ beam. One observes that, at a distance $l = 20 "m"$ from the production target, $10%$ of the pions have decayed. Find the momentum and energy of the pions.
+]
+
+#solution[
+
+  假设束流损失仅来自衰变，存活率为
+  $
+    N/N_0 = exp(-l/(beta c gamma t_"Lab")) = 0.9
+  $
+  所以实验室系中的衰变长度
+  $
+    d_"Lab" = beta c gamma t_"Lab" = -l/ln(0.9) = 189.24 "m"
+  $
+  且已知寿命
+  $
+    c t_"Lab" = 7.80 "m"
+  $
+  得到
+  $
+    gamma beta = d_"Lab"/(c t_"Lab") = 24.32
+  $
+  由此可以求出粒子的速度和动量
+  $
+    p & = gamma beta m = 3.39 "GeV" \
+    E & = sqrt(p^2+m^2) = 3.40 "GeV"
+  $
 ]
 
 #exercise(subname: [1.20])[
   A $pi^-$ beam is brought to rest in a liquid hydrogen target. Here $pi^0$ are produced by the ‘charge exchange’ reaction $pi^- + p -> pi^0 + n$. Find the energy of the $pi^0$, the kinetic energy of the $n$, the velocity of the $pi^0$ and the distance travelled by the $pi^0$ in a lifetime.
 ]
 
+#solution[
+  处态总动量0，处态总能量
+  $
+    W = m_"pi^-"+m_p
+  $
+  可以视$W$为二体的总不变质量
+  $
+    E_(pi^0) & = (W^2+m_(pi^0)^2-m_n^2)/(2 W) = 137.86 "MeV" \
+         T_n & = (W^2+m_n^2-m_(pi^0)^2)/(2 W) - m_n = 0.42 "MeV"
+  $
+  两个末态的动量等大反向，大小为
+  $
+    p = sqrt(E_(pi^0)^2-m_(pi^0)^2) = 28.04 "MeV"
+  $
+  所以pion的速度为
+  $
+    beta_(pi^0) & = p/E_(pi^0) = 0.203
+  $
+  $
+    v_(pi^0) & = beta_(pi^0) c = 0.203 c = 6.10 times 10^7 "m/s"
+  $
+  静止系中平均寿命为$tau_(pi^0) = 8.43 times 10^(-17) "s"$，飞行距离
+  $
+    d = beta gamma c tau_(pi^0) = p/(m_(pi^0)) c tau_(pi^0) = 5.25 times 10^(-9) "m"
+  $
+
+]
+
+
 #exercise(subname: [1.27])[
   A particle of mass $m$, charge $q = 1.6 times 10^(-19) "C"$ and momentum $p$ moves in a circular orbit at a constant speed (in absolute value) in the magnetic field $B$ normal to the orbit. Find the relationship between $m$, $p$ and $B$.
+]
+
+#solution[
+  对于带电粒子在垂直于轨道的均匀磁场中做圆周运动，运动方程为
+  $
+    dv(vb(p), t) & = q vb(v) times vb(B), vb(p) = gamma m vb(v) \
+  $
+  而
+  $
+    abs(dv(vb(p), t)) = p v/R = abs(q) abs(vb(v)) B
+  $
+  从而
+  $
+    R & = abs(vb(p))/(abs(q) B)
+  $
+  对该粒子
+  $
+    p["GeV"/c] = 0.3 B["T"] R["m"]
+  $
 ]
 
 #exercise(subname: [1.28])[
   We wish to measure the total $pi^+ p$ cross-section at $20 "GeV"$ incident momentum. We build a liquid hydrogen target ($rho = 60 "kg" "m"^(-3)$) that is $l = 1 "m"$ long. We measure the flux before and after the target with two scintillation counters. Measurements are made with the target empty and with the target full. By normalizing the fluxes after the target to the same incident flux, we obtain in the two cases $N_0 = 7.5 times 10^5$ and $N_H = 6.9 times 10^5$ respectively. Find the cross-section and its statistical error (ignoring the uncertainty of the normalization).
 ]
 
+#solution[
+
+  每单位体积的氢原子数为
+  $
+    n_"H" = rho/m_"H" = 3.59 times 10^28 "m"^(-3)
+  $
+  透射率是
+  $
+    N_"H"/N_0 = exp(-n_"H" sigma l)
+  $
+  从而
+  $
+    sigma = 1/(n_"H" l) ln(N_0/N_"H") = 2.32 times 10^(-30) "m"^(-2)
+  $
+  统计误差为
+  $
+    (delta sigma)^2 = pdv(sigma, N_"H")^2 delta N_"H"^2 + pdv(sigma, N_0)^2 delta N_0^2
+  $
+  其中由于$N_0$和$N_"H"$服从Poisson分布
+  $
+    delta N_"H" = sqrt(N_"H"), quad delta N_0 = sqrt(N_0)
+  $
+  从而
+  $
+    (delta sigma)^2 & = 1/(n_"H" l)^2 (1/N_"H" + 1/N_0) \
+        delta sigma & = 1/(n_"H" l) sqrt(1/N_"H" + 1/N_0) = 0.47 "mb"
+  $
+  从而
+  $
+    sigma = 23.24 plus.minus 0.47 "mb"
+  $
+]
+
 #exercise(subname: [1.30])[
   Consider two particles with masses $m_1$ and $m_2$ and the same momentum $p$. Evaluate the difference $Delta t$ between the times taken to cross the distance $L$. Let us define the base with two scintillator counters and measure $Delta t$ with $300 "ps"$ resolution. How much must $L$ be if we want to distinguish $pi$ from $K$ at two standard deviations, if their momentum is $4 "GeV"$?
 ]
 
+#solution[
+
+  对于飞行时间
+  $
+    t = L/(beta) = L sqrt(1 + m^2/p^2)
+  $
+  从而
+  $
+    Delta t & = L (sqrt(1 + m_1^2/p^2) - sqrt(1 + m_2^2/p^2)) \
+            & = L (m_1^2 - m_2^2)/(2 p^2) + O(m^4/p^4) \
+            & >= 2 sigma
+  $
+  从而
+  $
+    L >= 2 sigma (2 p^2)/(m_1^2 - m_2^2) = 25.77 "m"
+  $
+]
+
 #exercise(subname: [1.33])[
-  Considering the Cherenkov effect in water ($n = 1.33$), determine: (1) the minimum velocity of a charged particle for emitting radiation, (2) the minimum kinetic energy for a proton and a pion to do so and (3) the Cherenkov angle for a pion with energy $E_pi = 400 "MeV"$.
+  Considering the Cherenkov effect in water ($n = 1.33$), determine:
+  - the minimum velocity of a charged particle for emitting radiation,
+  - the minimum kinetic energy for a proton and a pion to do so and
+  - the Cherenkov angle for a pion with energy $E_pi = 400 "MeV"$.
+]
+
+#solution[
+
+  - 由Cherenkov辐射的条件$beta n > 1$，可得最小速度为
+    $
+      beta_"th" = 1/n = 0.7519
+    $
+    从而
+    $
+      v_"th" = beta_"th" c = 2.25 times 10^8 "m/s"
+    $
+  - 相应的Lorentz因子为
+    $
+      gamma_"th" = 1/sqrt(1-beta_"th"^2) = 1.517
+    $
+    对于质子和介子，其最小动能分别为
+    $
+      T_"th"^("p") & = (gamma_"th" - 1) m_"p" c^2 = 484.86 "MeV"
+                     T_"th"^("pi") & = (gamma_"th" - 1) m_"pi" c^2 = 72.12 "MeV"
+    $
+  - 对于能量为$E_pi = 400 "MeV"$的介子
+    $
+      beta_pi = sqrt(1 - m_"pi"^2/E_pi^2) = 0.937
+    $
+    Cherenkov角为
+    $
+      cos theta_c = 1/(n beta_pi)
+    $
+    则
+    $
+      theta_c = arccos(1/(n beta_pi)) = 36.65 degree
+    $
+]
+
+#exercise(subname: [平面波归一化条件的Lorentz不变性])[
+  *$N$体末态相空间*为
+  $
+    dd(Phi_N)=(2 pi)^4 delta^4(P_i-sum_(j=1)^N p_j)
+    product_(j=1)^N dd(vb(p)_j, 3)/((2 pi)^3 2E_j)
+  $
+  证明其在Lorentz变换下不变，并说明平面波归一化条件的不变性。
+]
+
+#proof[
+  设粒子在正能量质量壳上，
+  $
+    p^mu=(E_vb(p),vb(p)), quad E_vb(p)=sqrt(vb(p)^2+m^2)>0
+  $
+  以下考虑保持时间方向的固有Lorentz变换$p'^mu=Lambda^mu_(" "nu) p^nu$，先略去自旋指标。
+
+  从四维测度出发，考虑
+  $
+    dd(p, 4) delta(p^2-m^2) theta(p^0)
+  $
+  其中$theta$为Heaviside阶跃函数。由于$det Lambda=1$、$p'^2=p^2$，并且正能量质壳在所考虑的变换下仍映为正能量质壳，故这个测度不变。
+
+  注意$E_vb(p)$只依赖三动量，在对$p^0$积分时是常数。利用$delta$函数的换元公式，
+  $
+    delta(p^2-m^2) & =delta((p^0)^2-E_vb(p)^2) \
+                   & =[delta(p^0-E_vb(p))+delta(p^0+E_vb(p))]/(2E_vb(p))
+  $
+  乘以$theta(p^0)$后只留下正能量根。对任意函数$f$，有
+  $
+    & integral dd(p, 4) delta(p^2-m^2) theta(p^0) f(p) \
+    & quad =integral dd(vb(p), 3)/(2E_vb(p)) f(E_vb(p),vb(p))
+  $
+  因此积掉$p^0$以后得到的正能量质壳测度满足
+  $
+    dd(vb(p)', 3)/(2E_vb(p)')=dd(vb(p), 3)/(2E_vb(p))
+  $
+  再乘上常数$(2 pi)^(-3)$不会改变其Lorentz不变性。
+
+  令$K=P_i-sum_(j=1)^N p_j$。所有初、末态四动量同时作同一个Lorentz变换时，$K'=Lambda K$，故
+  $
+    delta^4(K')=delta^4(Lambda K)=1/abs(det Lambda) delta^4(K)=delta^4(K)
+  $
+  再结合每一个单粒子测度的不变性，得到
+  $
+    dd(Phi'_N) & =(2 pi)^4 delta^4(K') product_(j=1)^N dd(vb(p)'_j, 3)/((2 pi)^3 2E'_j) \
+               & =(2 pi)^4 delta^4(K) product_(j=1)^N dd(vb(p)_j, 3)/((2 pi)^3 2E_j)=dd(Phi_N)
+  $
+  因此单粒子质壳测度、相对论归一化条件以及整个末态相空间都是Lorentz不变的。单独的$E$、$dd(vb(p), 3)$或$delta^3(vb(q)-vb(p))$则一般不是不变量。
 ]
 
 #exercise(subname: [碰撞微分截面])[
