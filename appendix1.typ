@@ -9,22 +9,7 @@
 } else {
   numbering("A.1", n, ..ns)
 })
-#show heading.where(level: 2): it => block(sticky: true)[#it]
-#show heading.where(level: 3): it => block(sticky: true)[#it]
-// 附录沿用正文样式，首页只保留书名，后续页显示附录标题。
-#set page(header: context {
-  set text(font: font.header)
-  let sec = query(<app-tensor>).first()
-  grid(columns: (1fr, auto), align: (left, right))[
-    #smallcaps([粒子物理])
-  ][
-    #if here().page() > sec.location().page() {
-      numbering(sec.numbering, ..counter(heading).at(sec.location()))
-      [ ]
-      smallcaps(sec.body)
-    }
-  ]
-})
+
 #show: ratchet.with(
   init: "reset",
   eq-depth: 3,
@@ -36,7 +21,9 @@
 
 = 矢量、张量与物理中的变换 <app-tensor>
 
-矢量不只是三个数，张量也不只是多维数组。它们首先是线性空间上的几何对象；选定基底后，才用一组数表示。换坐标时分量怎样变化，体现了这些数表示的究竟是什么对象。本附录从线性代数出发，建立对偶空间、张量积、度量与外代数，再说明电动力学、相对论和量子场论为何采用这些语言。
+这一章我们将阐述什么是矢量、张量、度量、外代数和Hodge对偶，并说明它们在电动力学、相对论和量子场论中的作用。
+
+它们首先是线性空间上的几何对象；选定基底后，才用一组数表示。换坐标时分量怎样变化，体现了这些数表示的究竟是什么对象。本附录从线性代数出发，建立对偶空间、张量积、度量与外代数，再说明电动力学、相对论和量子场论为何采用这些语言。
 
 以下先讨论有限维实向量空间；量子态和旋量涉及复空间时另作说明。拉丁指标$i,j,k=1,dots,n$，相对论的希腊指标$mu,nu=0,1,2,3$。一上一下的重复指标默认求和；自由指标在等式两侧必须相同。时空采用$g_(mu nu)="diag"(1,-1,-1,-1)$。涉及电磁学单位时保留$c$，旋量与场论部分取$hbar=c=1$。
 
@@ -64,7 +51,7 @@
 $
   vb(v)=v^i vb(e)_i=sum_(i=1)^n v^i vb(e)_i
 $
-几何对象$vb(v)$与坐标列$v=(v^1,dots,v^n)^T$必须区分。同一个向量可以在不同基底下具有不同的坐标。
+几何对象$vb(v)$与坐标列$v=(v^1,dots,v^n)^TT$必须区分。同一个向量可以在不同基底下具有不同的坐标。
 
 把基矢排成一行$B=(vb(e)_1,dots,vb(e)_n)$。约定换基为$B'=B M$，其中$M$可逆。保持向量不变时，
 $
@@ -103,14 +90,14 @@ $
 若把$alpha$的分量排成行矩阵，则$alpha'=alpha M$；排成列矩阵则$alpha'=M^T alpha$。因此协向量并不等于“把一个列向量横过来”；行列只是表示方法，线性函数才是定义。
 
 #block(breakable: false)[
-#example(subname: [微分为什么是协向量])[
-  对标量函数$f$，沿方向$vb(v)$的变化率是
-  $
-    dd(f)(vb(v))=v^i partial_i f, quad
-    dd(f)=(partial_i f)theta^i
-  $
-  方向$vb(v)$是输入，方向导数是输出的数，故$dd(f)$属于对偶空间。写成通常的“梯度箭头”$nabla f$，还需要度量把一形式变成向量。
-]
+  #example(subname: [微分为什么是协向量])[
+    对标量函数$f$，沿方向$vb(v)$的变化率是
+    $
+      dd(f)(vb(v))=v^i partial_i f, quad
+      dd(f)=(partial_i f)theta^i
+    $
+    方向$vb(v)$是输入，方向导数是输出的数，故$dd(f)$属于对偶空间。写成通常的“梯度箭头”$nabla f$，还需要度量把一形式变成向量。
+  ]
 ]
 #newpara()
 
@@ -295,9 +282,9 @@ $
 熟悉的极坐标梯度公式中的$1/r$，正是度量和单位基底共同产生的。
 
 #block(breakable: false)[
-#note(subname: [协向量、协变指标与Lorentz协变性])[
-  “协向量”指$V^*$中的对象；“协变指标”指下指标的变换规律；“方程协变”指整个方程正确变换并保持相同的几何关系。这三个用法相关，但不能相互替代。赝矢量也可以升降指标；“赝”属于另一种分类。
-]
+  #note(subname: [协向量、协变指标与Lorentz协变性])[
+    “协向量”指$V^*$中的对象；“协变指标”指下指标的变换规律；“方程协变”指整个方程正确变换并保持相同的几何关系。这三个用法相关，但不能相互替代。赝矢量也可以升降指标；“赝”属于另一种分类。
+  ]
 ]
 #newpara()
 
@@ -798,7 +785,7 @@ $
 
 考虑自旋$1/2$的归一化二分量态
 $
-  chi=mat(a;b), quad abs(a)^2+abs(b)^2=1
+  chi=mat(a; b), quad abs(a)^2+abs(b)^2=1
 $
 它就是*Pauli旋量*。$a,b$是两个自旋基态的复概率振幅，不是物理空间中两个方向的坐标。
 
@@ -816,7 +803,7 @@ $R$是$3 times 3$实旋转矩阵，$U$是$2 times 2$复旋量矩阵。分量的�
 角动量是旋转的生成元。取$vb(S)=vb(sigma)/2$，绕单位轴$vb(n)$主动旋转$theta$的算符为
 $
   U(vb(n),theta)=exp(-i theta vb(n) dot vb(S))
-    =exp(-i theta vb(n) dot vb(sigma)/2)
+  =exp(-i theta vb(n) dot vb(sigma)/2)
 $
 由Pauli恒等式$sigma_i sigma_j=delta_(i j)I+i ϵ_(i j k)sigma_k$，可得$(vb(n) dot vb(sigma))^2=I$。将指数级数的奇偶项分开，得到
 $
@@ -824,8 +811,8 @@ $
 $
 因此绕$z$轴时，
 $
-  U_z(theta)=mat(e^(-i theta/2),0;0,e^(i theta/2)), quad
-  mat(a;b) -> mat(e^(-i theta/2)a;e^(i theta/2)b)
+  U_z(theta)=mat(e^(-i theta/2), 0; 0, e^(i theta/2)), quad
+  mat(a; b) -> mat(e^(-i theta/2)a; e^(i theta/2)b)
 $
 特别地
 $
@@ -840,7 +827,7 @@ $
 给一个三维实矢量$vb(v)$，用Pauli矩阵把它编码成无迹Hermitian矩阵
 $
   X(vb(v))=vb(v) dot vb(sigma)
-   =mat(v_z,v_x-i v_y;v_x+i v_y,-v_z), quad
+  =mat(v_z, v_x-i v_y; v_x+i v_y, -v_z), quad
   X(vb(v))^2=abs(vb(v))^2 I_2
 $
 取$U^dagger U=I_2$、$det U=1$，这样的矩阵组成$"SU"(2)$。变换$X'=U X U^dagger$保持无迹、Hermitian和$X^2$，所以对应一个保持长度的实矢量变换。由于$"SU"(2)$与恒等元连通，这个变换保持定向，属于$"SO"(3)$。
@@ -853,7 +840,7 @@ $
 代入上一节的$U$并使用Pauli乘法关系，可得Rodrigues公式
 $
   R vb(v)=vb(v)cos theta+(vb(n) times vb(v))sin theta
-    +vb(n)(vb(n) dot vb(v))(1-cos theta)
+  +vb(n)(vb(n) dot vb(v))(1-cos theta)
 $
 这确实是绕$vb(n)$旋转完整角度$theta$的三维旋转。任意三维旋转都能写为某个轴和角度，因此都可以找到对应的$U$。
 
@@ -870,7 +857,7 @@ $
 对归一化$chi=(a,b)^T$，定义
 $
   n_i=chi^dagger sigma_i chi, quad
-  vb(n)=mat(2"Re"(a^*b);2"Im"(a^*b);abs(a)^2-abs(b)^2)
+  vb(n)=mat(2"Re"(a^*b); 2"Im"(a^*b); abs(a)^2-abs(b)^2)
 $
 直接计算得
 $
@@ -878,7 +865,7 @@ $
 $
 所以$vb(n)$位于单位球面上，且$⟨vb(S)⟩=vb(n)/2$。去掉整体相位的归一化二分量纯态，可用Bloch球面上的一点表示：
 $
-  chi=e^(i alpha)mat(cos(theta/2);e^(i phi)sin(theta/2)), quad
+  chi=e^(i alpha)mat(cos(theta/2); e^(i phi)sin(theta/2)), quad
   vb(n)=(sin theta cos phi,sin theta sin phi,cos theta)
 $
 自旋态是旋量，$vb(S)$是矢量算符，自旋平均值$⟨vb(S)⟩$是三维轴矢量，三者不是同一个对象。在旋转下，$chi'=U chi$导致$vb(n)'=R vb(n)$；单凭旋转律只能判定其三维矢量行为，轴矢量性质还需结合宇称。
@@ -887,13 +874,13 @@ $
   从$chi_0=(1,0)^T$出发，绕$y$轴旋转$theta$，有
   $
     chi(theta)=e^(-i theta sigma_y/2)chi_0
-      =mat(cos(theta/2);sin(theta/2))
+    =mat(cos(theta/2); sin(theta/2))
   $
   因而
   $
-    vb(n)(theta) &=(2cos(theta/2)sin(theta/2),0,
-        cos^2(theta/2)-sin^2(theta/2)) \
-      &=(sin theta,0,cos theta)
+    vb(n)(theta) & =(2cos(theta/2)sin(theta/2),0,
+                     cos^2(theta/2)-sin^2(theta/2)) \
+                 & =(sin theta,0,cos theta)
   $
   自旋平均方向转过$theta$，而非$theta/2$。这来自旋量的二次组合；“旋量像矢量的平方根”只能作为这种关系的比喻，不能理解成逐分量开平方。
 ]
@@ -908,7 +895,7 @@ $
 如果干涉仪只对一条路径施加$2pi$的自旋旋转，
 $
   (ket(A)+ket(B))/sqrt(2) ⊗ chi
-    -> (-ket(A)+ket(B))/sqrt(2) ⊗ chi
+  -> (-ket(A)+ket(B))/sqrt(2) ⊗ chi
 $
 产生的是两条路径的相对负号，可以改变干涉。故“旋量转两圈才恢复”指旋量及提升后的旋转算符的数学行为；不能据此声称所有可观测量都要转两圈才恢复。
 
@@ -917,7 +904,7 @@ $
 四维中，把一个实四矢量编码成Hermitian矩阵
 $
   X=x^0 I+vb(x) dot vb(sigma)
-   =mat(x^0+x^3,x^1-i x^2;x^1+i x^2,x^0-x^3)
+  =mat(x^0+x^3, x^1-i x^2; x^1+i x^2, x^0-x^3)
 $
 它的行列式正好是Minkowski范数：
 $
@@ -937,8 +924,8 @@ $
 
 在与本文$gamma^5$约定相容的手性基底中，可写
 $
-  psi=mat(psi_L;psi_R), quad
-  S(M)=mat((M^dagger)^(-1),0;0,M)
+  psi=mat(psi_L; psi_R), quad
+  S(M)=mat((M^dagger)^(-1), 0; 0, M)
 $
 其中每块为$2 times 2$。表示的通常标签为
 $
@@ -953,7 +940,7 @@ $
 
 本节用$alpha,beta=1,2$标记二分量旋量。设$xi^alpha$按$M$变换。行列式为1的二阶矩阵保留反对称形式
 $
-  E=mat(0,1;-1,0), quad M^T E M=E
+  E=mat(0, 1; -1, 0), quad M^T E M=E
 $
 因此可以定义
 $
@@ -1015,9 +1002,9 @@ $
 
 例如前面使用的手性基底可具体取
 $
-  gamma^0=mat(0,I_2;I_2,0), quad
-  gamma^i=mat(0,sigma_i;-sigma_i,0), quad
-  gamma^5=mat(-I_2,0;0,I_2)
+  gamma^0=mat(0, I_2; I_2, 0), quad
+  gamma^i=mat(0, sigma_i; -sigma_i, 0), quad
+  gamma^5=mat(-I_2, 0; 0, I_2)
 $
 每个条目代表一个$2 times 2$块。由此可直接验证前面的$S(M)$满足$S^(-1)gamma^mu S=Lambda^mu_(" "nu)gamma^nu$，并看清上、下两个Weyl子空间为何具有相反的$gamma^5$本征值。更换$gamma$矩阵表象只是在旋量空间换基，不改变这种表示结构。
 
