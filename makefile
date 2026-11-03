@@ -23,6 +23,7 @@ MAIN_SRC := main.typ
 MAIN_PDF := $(BUILD_DIR)/main.pdf
 
 CHAPS := $(wildcard chap*.typ)
+APPENDICES := $(wildcard appendix*.typ)
 
 PIC_SRC := $(wildcard pic/*.typ)
 PIC_PDF := $(patsubst pic/%.typ,pic/builds/%.pdf,$(PIC_SRC))
@@ -36,7 +37,7 @@ HW_PDF := $(patsubst HW/%.typ,$(BUILD_DIR)/HW/%.pdf,$(HW_SRC))
 all: $(PIC_PDF) $(MAIN_PDF) $(SUMMARY_PDF) $(HW_PDF)
 
 # 编译主文档
-$(MAIN_PDF): $(MAIN_SRC) $(CHAPS) $(PIC_PDF)
+$(MAIN_PDF): $(MAIN_SRC) $(CHAPS) $(APPENDICES) $(PIC_PDF)
 	$(call MKDIR_P,$(dir $@))
 	typst compile $< $@
 
