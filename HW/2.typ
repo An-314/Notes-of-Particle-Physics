@@ -126,7 +126,7 @@
   $
     vb(mu) = g_l (q_l)/(2 m_l) vb(S)
   $
-  其中 $g_l$ 是洛伦兹因子，$q_l$ 是电荷，$m_l$ 是质量，$vb(S)$ 是自旋
+  其中 $g_l$ 是Lorentz因子，$q_l$ 是电荷，$m_l$ 是质量，$vb(S)$ 是自旋
   $
     abs(mu_e)/abs(mu_mu) = m_mu / m_e = 206.768\
     abs(mu_e)/abs(mu_tau) = m_tau / m_e = 3477.23
