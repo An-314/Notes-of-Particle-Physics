@@ -464,7 +464,7 @@ $
 
 每次衰变在Dalitz图上留下一个点：两个坐标指定两个独立能量，第三个由能量守恒确定。*点的位置表示能量如何分配，点的密度表示这种分配有多常见。* 对整体取向积分、母粒子自旋取非极化平均后，理想分布满足
 $
-  rho(E_1,E_2) equiv (upright(d)^2 N)/(dd(E_1)dd(E_2))
+  rho(E_1, E_2) equiv (upright(d)^2 N)/(dd(E_1)dd(E_2))
   prop overline(abs(cal(M))^2)
 $
 相空间在这两个坐标中均匀，边界由运动学决定，区内的疏密则反映振幅。实际数据还须校正探测效率。#footnote[PDG，#link("https://pdg.lbl.gov/2025/reviews/rpp2025-rev-kinematics.pdf")[Kinematics，三体衰变的Dalitz分布]。]
@@ -986,18 +986,20 @@ $
 === $Omega^-$的预言与发现
 
 当时只发现了九个$J=3/2$重子。八正法要求十重态还必须有第十个粒子
-$ Omega^- ,quad I=0,quad S=-3. $
+$
+  Omega^- ,quad I=0,quad S=-3
+$
 $"SU"(3)$是近似对称性。若忽略同位旋对称性的破缺，不同奇异数（超荷）的粒子仍有不同质量。十维表示中的质量可以看作$Y$的函数。用已知九个重子的历史质量数据外推，可得
 $
-  M(Y)=a+b Y quad arrow.r quad M_(Omega^-)=1684.1 "MeV" quad ("一级近似"),
+  M(Y)=a+b Y quad arrow.r quad M_(Omega^-)=1684.1 "MeV" quad ("一级近似")\
+  M(Y)=a+b Y+c Y^2 quad arrow.r quad M_(Omega^-)=1678.4 "MeV" quad ("二级近似")
 $
-$
-  M(Y)=a+b Y+c Y^2 quad arrow.r quad M_(Omega^-)=1678.4 "MeV" quad ("二级近似").
-$
-用于外推的$Delta$、$Sigma(1385)$、$Xi(1530)$数据已完整列在前面的$3/2^+$表中。
+用于外推的$Delta$、$Sigma(1385)$、$Xi(1530)$数据已完整列在前面的$(3/2)^+$表中。
 
 由于质量满足
-$ M_(Omega^-)<M_Xi+M_K,quad M_Lambda+2M_K,quad M_N+3M_K, $
+$
+  M_(Omega^-)<M_Xi+M_K,quad M_Lambda+2M_K,quad M_N+3M_K
+$
 这个粒子不能通过强相互作用或电磁相互作用衰变，只能通过弱相互作用衰变。其寿命远长于强衰变的典型时间尺度，属于亚稳定粒子。
 #block(
   breakable: false,
@@ -1013,16 +1015,12 @@ $ M_(Omega^-)<M_Xi+M_K,quad M_Lambda+2M_K,quad M_N+3M_K, $
     caption: [发现$Omega^-$的气泡室照片、径迹解释及反应链原图，PRL 12 (1964) 204],
   )
 ]
-原图展示的产生和衰变链为
+产生和衰变链为
 $
-  K^-+p -> Omega^-+K^++K^0,
-$
-$
-  Omega^- -> Xi^0+pi^- ,quad Xi^0 -> Lambda^0+pi^0,
-$
-$
+  K^-+p -> Omega^-+K^++K^0\
+  Omega^- -> Xi^0+pi^- ,quad Xi^0 -> Lambda^0+pi^0\
   Lambda^0 -> pi^-+p,quad pi^0 -> gamma_1+gamma_2,
-  quad gamma_(1,2) -> e^++e^-.
+  quad gamma_(1,2) -> e^++e^-
 $
 
 八正法确立了$"SU"(3)$对称性的分类作用，但留下一个问题。为什么介子出现$bold(1)$和$bold(8)$，重子出现$bold(8)$和$bold(10)$，而简单模型中的$bold(10)^*$和$bold(27)$没有出现？1964年的夸克模型为这个问题给出了解释。
@@ -1033,241 +1031,233 @@ $
 
 Gell-Mann与Zweig在1964年提出夸克模型。模型用三个基本费米子$u,d,s$组成强子，它们构成味$"SU"(3)$的基础表示。介子由一对正反（价）夸克组成，重子由三个（价）夸克组成，因而
 $
-  bold(3)⊗bold(3)^*=bold(1)⊕bold(8),
+  bold(3)⊗bold(3)^*=bold(1)⊕bold(8)
 $
 $
-  bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10).
+  bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10)
 $
 夸克模型由此解释八正法中最低强子多重态的结构。
 
-#block(breakable: false)[
-  #figure(
-    grid(
-      columns: (1fr, 1fr),
-      gutter: 2em,
-      align(center)[#image("pic/ch4/source-p74-2.jpeg", width: 37%)\ M. Gell-Mann],
-      align(center)[#image("pic/ch4/source-p74-3.jpeg", width: 36%)\ G. Zweig],
-    ),
-    caption: [夸克模型提出者Gell-Mann和Zweig],
-  )
-]
 
-#block(breakable: false)[
-  #figure(
-    image("pic/ch4/source-p75-1.png", width: 100%),
-    caption: [$u,d,s$夸克的基本量子数与质量原表。表中$B$列表示bottomness，花体$cal(B)$列表示重子数],
-  )
-]
-夸克带分数电荷和分数重子数，实验中尚未发现自由夸克。味$"SU"(3)$对称性的含义是在忽略三种夸克质量差别后，强相互作用不能区分它们。三种夸克可视为同一种粒子的不同味（flavor）状态，以$I,I_z,Y$标志。
+#figure(
+  image("pic/ch4/source-p75-1.png", width: 100%),
+  caption: [$u,d,s$夸克的基本量子数与质量原表：表中$B$列表示bottomness，花体$cal(B)$列表示重子数],
+)
+
+夸克带分数电荷和分数重子数，实验中尚未发现自由夸克。味$"SU"(3)$对称性的含义是在忽略三种夸克质量差别后，*强相互作用*不能区分它们。三种夸克可视为同一种粒子的不同*味（flavor）状态*，以$I,I_z,Y$标志。
 
 在味多重态的形式分类中，内部对称变换可以联系不同奇异数和电荷的基态。
-#block(
-  breakable: false,
-)[#note[这句话是在味多重态分类的语境下，指群变换可以把具有不同$S$和$Q$的基态彼此联系。它不等于说物理电荷的超选择规则被消除，具体反应仍须满足适用的守恒律。]]
+#note[这句话是在味多重态分类的语境下，指群变换可以把具有不同$S$和$Q$的基态彼此联系。它不等于说物理电荷的超选择规则被消除，具体反应仍须满足适用的守恒律。]
 
 === 重子波函数与十重态
 
 // 第76–81页。
 重子由三个夸克通过强相互作用组成。把味自由度作为粒子内部状态考虑后，三个夸克是全同费米子，因此总波函数在交换任意两个夸克时必须反对称。不计色自由度时写成
-$ psi=phi_("flavour") chi_("spin") eta_("space"). $
+$
+  psi=phi_("flavour") chi_("spin") eta_("space")
+$
 这里讨论基态重子，无内部轨道角动量，即$l=0$，空间波函数对称。
 
 在味空间中
-$ bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10). $
-一维表示的基全反对称，$(I_3,Y)=(0,0)$的态为
-$ phi_A=1/sqrt(6)(u d s-u s d+s u d-s d u+d s u-d u s). $
-十维表示的基全对称，用$[q_1 q_2 q_3]_S$表示，例如
 $
-  [u u u]_S=u u u,
+  bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10)
 $
+一维表示的基*全反对称*，$(I_3,Y)=(0,0)$的态为
 $
-  [u u d]_S=1/sqrt(3)(u u d+u d u+d u u),
+  ket(I\,I_3\,Y) = ket(0\,0\,0) = phi_A=1/sqrt(6)(u d s-u s d+s u d-s d u+d s u-d u s)
 $
+取
 $
-  [u d s]_S=1/sqrt(6)(u d s+u s d+d s u+d u s+s u d+s d u).
+  u = ket(1/2\,1/2\,1/3),quad d = ket(1/2\,-1/2\,1/3),quad s = ket(0\,0\,-2/3)
+$
+十维表示的基*全对称*，用$[q_1 q_2 q_3]_S$表示，例如
+$
+  [u u u]_S & =u u u \
+  [u u d]_S & =1/sqrt(3)(u u d+u d u+d u u) \
+  [u d s]_S & =1/sqrt(6)(u d s+u s d+d s u+d u s+s u d+s d u)
 $
 十个基态的位置完整为
 $
-  (-3/2,1)=[d d d]_S,quad (-1/2,1)=[d d u]_S,
-$
-$
-  (1/2,1)=[d u u]_S,quad (3/2,1)=[u u u]_S,
-$
-$
-  (-1,0)=[d d s]_S,quad (0,0)=[d u s]_S,quad (1,0)=[u u s]_S,
-$
-$
-  (-1/2,-1)=[d s s]_S,quad (1/2,-1)=[u s s]_S,
-  quad (0,-2)=[s s s]_S.
+  ket(3/2\,-3/2\,1)=[d d d]_S,quad ket(3/2\,-1/2\,1)=[d d u]_S,quad ket(3/2\,1/2\,1)=[d u u]_S,quad ket(3/2\,3/2\,1)=[u u u]_S\
+  ket(1\,-1\,0)=[d d s]_S,quad ket(1\,0\,0)=[d u s]_S,quad ket(1\,1\,0)=[u u s]_S\
+  ket(1/2\,-1/2\,-1)=[d s s]_S,quad ket(1/2\,1/2\,-1)=[u s s]_S\
+  quad ket(0\,0\,-2)=[s s s]_S
 $
 它们依次对应$Delta^-,Delta^0,Delta^+,Delta^(++)$，$Sigma^(*-),Sigma^(*0),Sigma^(*+)$，$Xi^(*-),Xi^(*0)$和$Omega^-$。
-#block(breakable: false)[
-  #figure(image("pic/ch4/source-p78-2.png", width: 65%), caption: [重子十重态原始权图，质量数据见前述完整$3/2^+$表])
-]
+
+#figure(image("pic/ch4/source-p78-2.png", width: 65%), caption: [重子十重态原始权图，质量数据见前述完整$3/2^+$表])
 
 实验发现这些重子的自旋为$3/2$。若夸克自旋为$1/2$，其自旋波函数必须为
 $
-  ket(3/2","3/2)=↑↑↑,
+     ket(3/2","3/2) & =↑↑↑ \
+     ket(3/2","1/2) & =1/sqrt(3)(↑↑↓+↑↓↑+↓↑↑) \
+  ket(3/2", " -1/2) & =1/sqrt(3)(↑↓↓+↓↑↓+↓↓↑) \
+  ket(3/2", " -3/2) & =↓↓↓
 $
-$
-  ket(3/2","1/2)=1/sqrt(3)(↑↑↓+↑↓↑+↓↑↑),
-$
-$
-  ket(3/2", " -1/2)=1/sqrt(3)(↑↓↓+↓↑↓+↓↓↑),
-$
-$
-  ket(3/2", " -3/2)=↓↓↓.
-$
-自旋波函数也全对称。味、自旋和基态空间波函数都对称，无法满足总波函数反对称，因而必须引入味、自旋之外的*色自由度*。
+自旋波函数也*全对称*。*味、自旋和基态空间波函数都对称*，无法满足*总波函数反对称*，因而必须引入味、自旋之外的*色自由度*。
 
 引入色$"SU"(3)_C$后，夸克处于基础表示，三个色态记为$R,G,B$。对于重子
-$ bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10), $
-其中一维表示全反对称，
-$ xi_("colour")=1/sqrt(6)(R G B-R B G+B R G-B G R+G B R-G R B). $
-若假定强子总处于色单态（一维表示），即不把带净色荷的态作为可独立存在的强子，十重态重子的自旋—统计问题便得到解决。
+$
+  bold(3)⊗bold(3)⊗bold(3)=bold(1)⊕bold(8)⊕bold(8)⊕bold(10)
+$
+其中一维表示*全反对称*
+$
+  xi_("colour")=1/sqrt(6)(R G B-R B G+B R G-B G R+G B R-G R B)
+$
+若*假定强子总处于色单态*（一维表示），也称为*色禁闭*，即不把带净色荷的态作为可独立存在的强子，十重态重子的自旋—统计问题便得到解决。
 
-考虑色自由度后，重子总波函数为
-$ psi=phi_("flavour") chi_("spin") xi_("colour") eta_("space"). $
+考虑*色自由度*后，重子总波函数为
+$
+  psi=phi_("flavour") chi_("spin") xi_("colour") eta_("space")
+$
 色单态的$xi_("colour")$全反对称，基态的$eta_("space")$对称，因此
 $
   xi_("colour") eta_("space") quad "反对称",quad quad
-  phi_("flavour") chi_("spin") quad "对称".
+  phi_("flavour") chi_("spin") quad "对称"
 $
 在这些基态条件下，是否存在味$"SU"(3)$单态的重子？
-#block(
-  breakable: false,
-)[#note[在当前三个自旋$1/2$夸克、空间基态、颜色单态的条件下，味单态全反对称，需要全反对称的自旋波函数配对才使味—自旋对称。但三个二维自旋空间的全反对称部分$∧^3 bb(C)^2$为零，因此本节的基态构造不含味单态。]]
+#note[在当前三个自旋$1/2$夸克、空间基态、颜色单态的条件下，味单态全反对称，需要全反对称的自旋波函数配对才使味—自旋对称。但三个二维自旋空间的全反对称部分$∧^3 bb(C)^2$为零，因此本节的基态构造*不含味单态重子*。]
 
 === 重子八重态的混合对称基
 
 // 第82–84页。
-色禁闭要求三个夸克的色波函数全反对称，八重态重子的“味＋自旋”波函数必须全对称。自旋$"SU"(2)$的分解为
+色禁闭要求三个夸克的*色波函数全反对称*，八重态重子的“味＋自旋”波函数必须*全对称*。自旋$"SU"(2)$的分解为
 $
   (bold(2)⊗bold(2))⊗bold(2)
   =(bold(3)⊕bold(1))⊗bold(2)
   =(bold(3)⊗bold(2))⊕(bold(1)⊗bold(2))
-  =bold(4)⊕bold(2)⊕bold(2).
+  =bold(4)⊕bold(2)⊕bold(2)
 $
-两个二维表示具有混合对称性。按前两个夸克的交换对称性，选取
+两个*二维表示具有混合对称性*。按前两个夸克的交换对称性，选取
 $
-  chi_(M,S)^(+) =1/sqrt(6)(↑↓↑+↓↑↑-2↑↑↓),
-$
-$
-  chi_(M,S)^(-) =1/sqrt(6)(-↑↓↓-↓↑↓+2↓↓↑),
-$
-$
-  chi_(M,A)^(+) =1/sqrt(2)(↑↓↑-↓↑↑),
-$
-$
-  chi_(M,A)^(-) =1/sqrt(2)(↑↓↓-↓↑↓).
+  chi_(M,S)^(+) & =1/sqrt(6)(↑↓↑+↓↑↑-2↑↑↓) \
+  chi_(M,S)^(-) & =1/sqrt(6)(-↑↓↓-↓↑↓+2↓↓↑) \
+  chi_(M,A)^(+) & =1/sqrt(2)(↑↓↑-↓↑↑) \
+  chi_(M,A)^(-) & =1/sqrt(2)(↑↓↓-↓↑↓)
 $
 这里上标$+$、$-$分别标记$J_z=1/2,-1/2$，$M,S$和$M,A$表示对前两粒子交换对称、反对称的混合基。
 
 味空间中两个八维表示也具有混合对称性。下面列出$(I_3,Y)$与两组基，$Sigma^0$和$Lambda$具有相同$(I_3,Y)=(0,0)$，另用$I$区分。
 
-#block(breakable: false)[
-  #block(breakable: false)[
-    #figure(
-      table(
-        columns: (auto, 1fr),
-        align: (left, left),
-        inset: 6pt,
-        [$h$与$(I_3,Y)$], [$phi_(M,S)$],
-        [$p,(1/2,1)$], [$1/sqrt(6)[(u d+d u)u-2u u d]$],
-        [$n,(-1/2,1)$], [$1/sqrt(6)[(u d+d u)d-2d d u]$],
-        [$Sigma^+,(1,0)$], [$1/sqrt(6)[(u s+s u)u-2u u s]$],
-        [$Sigma^0,(0,0)$], [$1/sqrt(6)[s (d u+u d)/sqrt(2)+(d s u+u s d)/sqrt(2)-2(d u+u d)/sqrt(2) s]$],
-        [$Sigma^-,(-1,0)$], [$1/sqrt(6)[(d s+s d)d-2d d s]$],
-        [$Lambda,(0,0)$], [$1/sqrt(2)[(d s u-u s d)/sqrt(2)+(s d u-s u d)/sqrt(2)]$],
-        [$Xi^0,(1/2,-1)$], [$-1/sqrt(6)[(u s+s u)s-2s s u]$],
-        [$Xi^-,(-1/2,-1)$], [$-1/sqrt(6)[(d s+s d)s-2s s d]$],
-      ),
-      caption: [混合味基，第一组$phi_(M,S)$],
-    )
-  ]
-]
+// #figure(
+//   table(
+//     columns: (auto, 1fr),
+//     align: (left, left),
+//     inset: 6pt,
+//     [$h$与$(I_3,Y)$], [$phi_(M,S)$],
+//     [$p,(1/2,1)$], [$1/sqrt(6)[(u d+d u)u-2u u d]$],
+//     [$n,(-1/2,1)$], [$1/sqrt(6)[(u d+d u)d-2d d u]$],
+//     [$Sigma^+,(1,0)$], [$1/sqrt(6)[(u s+s u)u-2u u s]$],
+//     [$Sigma^0,(0,0)$], [$1/sqrt(6)[s (d u+u d)/sqrt(2)+(d s u+u s d)/sqrt(2)-2(d u+u d)/sqrt(2) s]$],
+//     [$Sigma^-,(-1,0)$], [$1/sqrt(6)[(d s+s d)d-2d d s]$],
+//     [$Lambda,(0,0)$], [$1/sqrt(2)[(d s u-u s d)/sqrt(2)+(s d u-s u d)/sqrt(2)]$],
+//     [$Xi^0,(1/2,-1)$], [$-1/sqrt(6)[(u s+s u)s-2s s u]$],
+//     [$Xi^-,(-1/2,-1)$], [$-1/sqrt(6)[(d s+s d)s-2s s d]$],
+//   ),
+//   caption: [混合味基，第一组$phi_(M,S)$],
+// )
 
-#block(breakable: false)[
-  #block(breakable: false)[
-    #figure(
-      table(
-        columns: (auto, 1fr),
-        align: (left, left),
-        inset: 6pt,
-        [$h$与$(I_3,Y)$], [$phi_(M,A)$],
-        [$p,(1/2,1)$], [$1/sqrt(2)(u d-d u)u$],
-        [$n,(-1/2,1)$], [$1/sqrt(2)(u d-d u)d$],
-        [$Sigma^+,(1,0)$], [$1/sqrt(2)(u s-s u)u$],
-        [$Sigma^0,(0,0)$], [$1/sqrt(2)((d s u+u s d)/sqrt(2)-(s u d+s d u)/sqrt(2))$],
-        [$Sigma^-,(-1,0)$], [$1/sqrt(2)(d s-s d)d$],
-        [$Lambda,(0,0)$], [$1/sqrt(6)((s d u-s u d)/sqrt(2)+(u s d-d s u)/sqrt(2)-2(d u s-u d s)/sqrt(2))$],
-        [$Xi^0,(1/2,-1)$], [$-1/sqrt(2)(d s-s d)s$],
-        [$Xi^-,(-1/2,-1)$], [$-1/sqrt(2)(u s-s u)s$],
-      ),
-      caption: [混合味基，第二组$phi_(M,A)$，末两行原始标记保留],
-    )
-  ]
-]
+// #figure(
+//   table(
+//     columns: (auto, 1fr),
+//     align: (left, left),
+//     inset: 6pt,
+//     [$h$与$(I_3,Y)$], [$phi_(M,A)$],
+//     [$p,(1/2,1)$], [$1/sqrt(2)(u d-d u)u$],
+//     [$n,(-1/2,1)$], [$1/sqrt(2)(u d-d u)d$],
+//     [$Sigma^+,(1,0)$], [$1/sqrt(2)(u s-s u)u$],
+//     [$Sigma^0,(0,0)$], [$1/sqrt(2)((d s u+u s d)/sqrt(2)-(s u d+s d u)/sqrt(2))$],
+//     [$Sigma^-,(-1,0)$], [$1/sqrt(2)(d s-s d)d$],
+//     [$Lambda,(0,0)$], [$1/sqrt(6)((s d u-s u d)/sqrt(2)+(u s d-d s u)/sqrt(2)-2(d u s-u d s)/sqrt(2))$],
+//     [$Xi^0,(1/2,-1)$], [$-1/sqrt(2)(d s-s d)s$],
+//     [$Xi^-,(-1/2,-1)$], [$-1/sqrt(2)(u s-s u)s$],
+//   ),
+//   caption: [混合味基，第二组$phi_(M,A)$],
+// )
 
-#block(breakable: false)[#note(subname: [第83页最后两行的味标记])[
-  上表$Xi^0$、$Xi^-$的$phi_(M,A)$两项有味标记互换的排印错误。与左列$(I_3,Y)$一致的写法应为
-  $
-    phi_(M,A) (Xi^0)=-1/sqrt(2)(u s-s u)s,
-    quad phi_(M,A) (Xi^-)=-1/sqrt(2)(d s-s d)s.
-  $
-]]
+#figure(
+  table(
+    columns: (auto, 1fr, 1fr),
+    align: (left, left, left),
+    inset: 6pt,
+    stroke: none,
+    table.hline(),
+    [$ket(I\,I_3\,Y)$], [$phi_(M,S)$], [$phi_(M,A)$],
+    table.hline(),
+    [$p$ $ket(1/2\,1/2\,1)$], [$1/sqrt(6)[(u d+d u)u-2u u d]$], [$1/sqrt(2)(u d-d u)u$],
+    [$n$ $ket(1/2\,-1/2\,1)$], [$1/sqrt(6)[(u d+d u)d-2d d u]$], [$1/sqrt(2)(u d-d u)d$],
+    [$Sigma^+$ $ket(1\,1\,0)$], [$1/sqrt(6)[(u s+s u)u-2u u s]$], [$1/sqrt(2)(u s-s u)u$],
+    [$Sigma^0$ $ket(1\,0\,0)$],
+    [$1/sqrt(6)[s (d u+u d)/sqrt(2)+(d s u+u s d)/sqrt(2)-2(d u+u d)/sqrt(2) s]$],
+    [$1/sqrt(2)((d s u+u s d)/sqrt(2)-(s u d+s d u)/sqrt(2))$],
+    [$Sigma^-$ $ket(1\,-1\,0)$], [$1/sqrt(6)[(d s+s d)d-2d d s]$], [$1/sqrt(2)(d s-s d)d$],
+    [$Lambda$ $ket(0\,0\,0)$],
+    [$1/sqrt(2)[(d s u-u s d)/sqrt(2)+(s d u-s u d)/sqrt(2)]$],
+    [$1/sqrt(6)((s d u-s u d)/sqrt(2)+(u s d-d s u)/sqrt(2)-2(d u s-u d s)/sqrt(2))$],
+    [$Xi^0$ $ket(1/2\,1/2\,-1)$ ], [$-1/sqrt(6)[(u s+s u)s-2s s u]$], [$-1/sqrt(2)(u s-s u)s$],
+    [$Xi^-$ $ket(1/2\,-1/2\,-1)$], [$-1/sqrt(6)[(d s+s d)s-2s s d]$], [$-1/sqrt(2)(d s-s d)s$],
+    table.hline(),
+  ),
+  caption: [重子八重态的混合味基],
+)
+
 $Sigma^0$两基展开后为
 $
-  phi_(M,S) (Sigma^0)=(d s u+u s d+s d u+s u d-2d u s-2u d s)/sqrt(12),
-$
-$
-  phi_(M,A) (Sigma^0)=(d s u+u s d-s d u-s u d)/2.
+  phi_(M,S) (Sigma^0)=(d s u+u s d+s d u+s u d-2d u s-2u d s)/sqrt(12)\
+  phi_(M,A) (Sigma^0)=(d s u+u s d-s d u-s u d)/2
 $
 这也便于直接检查归一化和前两粒子的交换性质。
-#block(breakable: false)[#note(subname: [混合基的相位与耦合系数])[
+#note(subname: [混合基的相位与耦合系数])[
   味基的相位要与自旋混合基和耦合系数配套。下式的加号组合适用于随后给出的质子例子。按当前表中$n$的两列定义及同一组$chi_(M,S),chi_(M,A)$，由质子作$u↔d$得到中子时，$phi_(M,S)$变成表中$n$的$phi_(M,S)$，而$phi_(M,A)$变成表中$n$的$-phi_(M,A)$，因此应配相对减号。原表列出的交换性质和各行相位保留，但不能把不配套的相位定义直接代入同一个加号公式。
-]]
+]
+#newpara()
 
 在“味＋自旋”空间中组合出的全对称态是
-$ 1/sqrt(2)(phi_(M,S) chi_(M,S)+phi_(M,A) chi_(M,A)). $
+$
+  1/sqrt(2)(phi_(M,S) chi_(M,S)+phi_(M,A) chi_(M,A))
+$
 以自旋向上的质子为例，逐步展开为
 $
   ket(p↑) & =1/sqrt(2) lr(
-              {
+              (
                 1/sqrt(6)[(u d+d u)u-2u u d]
                 1/sqrt(6)(↑↓↑+↓↑↑-2↑↑↓)
-              }
+              )
             ) \
-          & quad +1/sqrt(2) lr({1/sqrt(2)(u d-d u)u 1/sqrt(2)(↑↓↑-↓↑↑)}).
+          & quad +1/sqrt(2) lr((1/sqrt(2)(u d-d u)u 1/sqrt(2)(↑↓↑-↓↑↑)))
 $
 整理相同的味排列得到
 $
-  ket(p↑) & =-1/sqrt(18) lr([u u d(↑↓↑+↓↑↑-2↑↑↓)]) \
-          & quad -1/sqrt(18) lr([u d u(↑↑↓+↓↑↑-2↑↓↑)]) \
-          & quad -1/sqrt(18) lr([d u u(↑↓↑+↑↑↓-2↓↑↑)]).
+  ket(p↑) & =-1/sqrt(18) lr((u u d(↑↓↑+↓↑↑-2↑↑↓))) \
+          & quad -1/sqrt(18) lr((u d u(↑↑↓+↓↑↑-2↑↓↑))) \
+          & quad -1/sqrt(18) lr((d u u(↑↓↑+↑↑↓-2↓↑↑)))
 $
 逐个夸克附上自旋后，也可写作
 $
-  ket(p↑)=-1/sqrt(18)[u↑u↓d↑+u↓u↑d↑-2u↑u↑d↓+"permutations"].
+  ket(p↑)=-1/sqrt(18)(u↑u↓d↑+u↓u↑d↑-2u↑u↑d↓+"permutations")
 $
 其中permutations表示同时排列味和自旋标签，使三个味位置$u u d$、$u d u$、$d u u$均包括在内。其九项完全展开为
 $
-  ket(p↑) & =-1/sqrt(18)[u↑u↓d↑+u↓u↑d↑-2u↑u↑d↓] \
-          & quad -1/sqrt(18)[u↑d↑u↓+u↓d↑u↑-2u↑d↓u↑] \
-          & quad -1/sqrt(18)[d↑u↑u↓+d↑u↓u↑-2d↓u↑u↑].
+  ket(p↑) & =-1/sqrt(18)(u↑u↓d↑+u↓u↑d↑-2u↑u↑d↓) \
+          & quad -1/sqrt(18)(u↑d↑u↓+u↓d↑u↑-2u↑d↓u↑) \
+          & quad -1/sqrt(18)(d↑u↑u↓+d↑u↓u↑-2d↓u↑u↑)
 $
-#block(breakable: false)[
-  #figure(image("pic/ch4/source-p84-1.png", width: 62%), caption: [重子八重态的原始权图])
-]
+
+#figure(image("pic/ch4/source-p84-1.png", width: 62%), caption: [重子八重态的原始权图])
+
 
 === 正反夸克系统与介子波函数
 
 // 第85–87页。
-正反夸克系统在色空间中满足
-$ bold(3)⊗bold(3)^*=bold(1)⊕bold(8). $
-色禁闭要求系统处于色单态，其色波函数为
-$ xi_1=1/sqrt(3)(R overline(R)+G overline(G)+B overline(B)). $
-味空间具有同样的直乘分解。
+正反夸克系统在*色空间*中满足
+$
+  bold(3)⊗bold(3)^*=bold(1)⊕bold(8)
+$
+色禁闭要求系统处于*色单态*，其色波函数为
+$
+  xi_1=1/sqrt(3)(R overline(R)+G overline(G)+B overline(B))
+$
+*味空间*具有同样的直乘分解。
 #block(breakable: false)[
   #figure(
     image("pic/ch4/source-p85-flavour.png", width: 92%),
@@ -1277,52 +1267,45 @@ $ xi_1=1/sqrt(3)(R overline(R)+G overline(G)+B overline(B)). $
 八重态的带味基为
 $
   d overline(s),quad u overline(s),quad d overline(u),quad
-  u overline(d),quad s overline(u),quad s overline(d),
+  u overline(d),quad s overline(u),quad s overline(d)
 $
 两个中性基为
 $
   1/sqrt(2)(u overline(u)-d overline(d)),
-  quad 1/sqrt(6)(u overline(u)+d overline(d)-2s overline(s)),
+  quad 1/sqrt(6)(u overline(u)+d overline(d)-2s overline(s))
 $
 另有味单态
-$ phi_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s)). $
-自旋空间的对称三重态和反对称单态分别为
+$
+  phi_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s))
+$
+#newpara()
+*自旋空间*的对称三重态和反对称单态分别为
 $
   chi_S=cases(↑↑, 1/sqrt(2)(↑↓+↓↑), ↓↓),
-  quad chi_A=1/sqrt(2)(↑↓-↓↑).
+  quad chi_A=1/sqrt(2)(↑↓-↓↑)
 $
-
-赝标介子的自旋处于单态。它们的味组成完整写为
+#newpara()
+*赝标介子*的自旋处于单态。它们的味组成完整写为
 $
-  K^0=d overline(s),quad K^+=u overline(s),
-$
-$
-  pi^-=d overline(u),quad pi^0=1/sqrt(2)(u overline(u)-d overline(d)),
-  quad pi^+=u overline(d),
-$
-$
-  K^-=s overline(u),quad overline(K)^0=s overline(d),
+  K^0=d overline(s),quad K^+=u overline(s)\
+  pi^-=d overline(u),quad pi^0=1/sqrt(2)(u overline(u)-d overline(d)), quad pi^+=u overline(d)\
+  K^-=s overline(u),quad overline(K)^0=s overline(d)
 $
 $
   eta_8=1/sqrt(6)(u overline(u)+d overline(d)-2s overline(s)),
-  quad eta_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s)).
+  quad eta_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s))
 $
 对中性、自共轭的赝标介子，$J^(P C)=0^(-+)$。其完整粒子性质表见前述赝标介子表。
 
-矢量介子的自旋处于三重态。对应的味组成是
+*矢量介子*的自旋处于三重态。对应的味组成是
 $
-  K^(*0)=d overline(s),quad K^(*+)=u overline(s),
-$
-$
-  rho^-=d overline(u),quad rho^0=1/sqrt(2)(u overline(u)-d overline(d)),
-  quad rho^+=u overline(d),
-$
-$
-  K^(*-)=s overline(u),quad overline(K)^(*0)=s overline(d),
+  K^(*0)=d overline(s),quad K^(*+)=u overline(s)\
+  rho^-=d overline(u),quad rho^0=1/sqrt(2)(u overline(u)-d overline(d)),quad rho^+=u overline(d)\
+  K^(*-)=s overline(u),quad overline(K)^(*0)=s overline(d)
 $
 $
   omega_8=1/sqrt(6)(u overline(u)+d overline(d)-2s overline(s)),
-  quad omega_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s)).
+  quad omega_1=1/sqrt(3)(u overline(u)+d overline(d)+s overline(s))
 $
 对中性、自共轭的矢量介子，$J^(P C)=1^(--)$。其完整粒子性质表见前述矢量介子表。
 
@@ -1330,32 +1313,38 @@ $
 
 // 第88–89页。
 对一个夸克，其磁矩为
-$ vb(mu)=g Q/(2m) vb(s),quad g=2. $
+$
+  vb(mu)=g Q/(2m) vb(s),quad g=2
+$
 在非相对论近似下，复合系统的磁矩是各组分之和，
-$ vb(mu)=sum_i g Q_i/(2m_i) vb(s)_i. $
+$
+  vb(mu)=sum_i g Q_i/(2m_i) vb(s)_i
+$
 通常也把磁矩在外磁场方向（取$z$轴）的投影称为磁矩。以自旋向上的单夸克定义$mu_q=Q_q/(2m_q)$，用上面的质子波函数得到
 $
   mu_p & =bra(p↑)sum_i g Q_i/(2m_i)s_(i z)ket(p↑) \
        & =1/18 lr(
-           {(mu_u-mu_u+mu_d)
-             +(-mu_u+mu_u+mu_d)+4(2mu_u-mu_d)}
+           ((mu_u-mu_u+mu_d)
+             +(-mu_u+mu_u+mu_d)+4(2mu_u-mu_d))
          ) times 3 \
-       & =1/3(4mu_u-mu_d).
+       & =1/3(4mu_u-mu_d)
 $
-这里三个相同的味排列给出因子3，振幅$-2$的项给出概率权重4。
+// 这里三个相同的味排列给出因子3，振幅$-2$的项给出概率权重4。
 
 作替换$u->d,d->u$得到中子波函数和磁矩，
 $
   mu_n=bra(n↑)sum_i g Q_i/(2m_i)s_(i z)ket(n↑)
-  =1/3(4mu_d-mu_u).
+  =1/3(4mu_d-mu_u)
 $
 于是
 $
   mu_n/mu_p=(4mu_d-mu_u)/(4mu_u-mu_d)
-  arrow.r^(m_u=m_d) -2/3.
+  arrow.r^(m_u=m_d) -2/3
 $
-这里$m_u=m_d$时，由夸克电荷$Q_u=2e/3$、$Q_d=-e/3$可知$mu_u=-2mu_d$。实验值为
-$ mu_n/mu_p=-0.68497945 plus.minus 0.00000058. $
+这里$m_u=m_d$时，由夸克电荷$Q_u=(2e)/3$、$Q_d=-e/3$可知$mu_u=-2mu_d$。实验值为
+$
+  mu_n/mu_p=-0.68497945 plus.minus 0.00000058
+$
 
 == 味对称的破缺和混合
 
@@ -1369,28 +1358,34 @@ $
   bra(q_i)H_("st")ket(q_j) & =mat(m_u, 0, 0; 0, m_d, 0; 0, 0, m_s) \
                            & arrow.r^(m_u=m_d) (2m_u+m_s)/3 bold(1)
                              +(m_u-m_s)/3 mat(1, 0, 0; 0, 1, 0; 0, 0, -2) \
-                           & =(2m_u+m_s)/3 bold(1)+(m_u-m_s)/sqrt(3) lambda_8.
+                           & =(2m_u+m_s)/3 bold(1)+(m_u-m_s)/sqrt(3) lambda_8
 $
 这里$lambda_8$见@ch4-su3-generators。由此尝试把强相互作用Hamiltonian写成
-$ H_("st")=H_0+H_8, $
+$
+  H_("st")=H_0+H_8
+$
 其中$H_0$味$"SU"(3)$不变，$H_8$按八维表示的第八分量变换。
 
 微扰展开并忽略$H_8$的高阶项。对于按照某个$"SU"(3)$不可约表示变换的强子态，
-$ H_0 ket(h_i^((0)))=m^((0))ket(h_i^((0))), $
 $
+  H_0 ket(h_i^((0)))=m^((0))ket(h_i^((0)))\
   (m_h)_(i j)=bra(h_i^((0)))H_("st")ket(h_j^((0)))
-  =m^((0))delta_(i j)+bra(h_i^((0)))H_8 ket(h_j^((0))).
+  =m^((0))delta_(i j)+bra(h_i^((0)))H_8 ket(h_j^((0)))
 $
 $"SU"(3)$变换能够互换同一不可约表示中的态，因此知道$H_8$的变换性质，就能得到这些粒子质量之间的关系。
 
 由群生成元构造、按八维表示第八分量变换的两个线性独立算符可取为
-$ vb(I)^2-1/4 Y^2,quad Y. $
-参考高崇寿《群论及其在粒子物理学中的应用》，写成
-$ H_8=delta m_1 Y+delta m_2(vb(I)^2-1/4 Y^2). $
+$
+  vb(I)^2-1/4 Y^2,quad Y
+$
+写成
+$
+  H_8=delta m_1 Y+delta m_2(vb(I)^2-1/4 Y^2)
+$
 因此
 $
   m_h (I,Y)=m^((0))+delta m_1 Y
-  +delta m_2(I(I+1)-1/4 Y^2).
+  +delta m_2(I(I+1)-1/4 Y^2)
 $
 这就是*Gell-Mann–Okubo公式*。对重子用质量，对介子则用质量的平方。
 
